@@ -20,7 +20,7 @@ import (
 
 	"github.com/opentracing/opentracing-go"
 
-	"gitee.com/rachel_os/rungo/client/orm"
+	"github.com/rachelos/rungo/client/orm"
 )
 
 // FilterChainBuilder provides an extension point

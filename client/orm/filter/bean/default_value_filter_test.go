@@ -19,7 +19,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"gitee.com/rachel_os/rungo/client/orm"
+	"github.com/rachelos/rungo/client/orm"
 )
 
 func TestDefaultValueFilterChainBuilderFilterChain(t *testing.T) {

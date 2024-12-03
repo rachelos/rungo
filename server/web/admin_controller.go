@@ -24,7 +24,7 @@ import (
 
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 
-	"gitee.com/rachel_os/rungo/core/admin"
+	"github.com/rachelos/rungo/core/admin"
 )
 
 type adminController struct {

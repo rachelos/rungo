@@ -17,7 +17,7 @@
 //
 // import(
 //
-//	"gitee.com/rachel_os/rungo/client/cache"
+//	"github.com/rachelos/rungo/client/cache"
 //
 // )
 //
@@ -35,7 +35,7 @@ import (
 	"context"
 	"time"
 
-	"gitee.com/rachel_os/rungo/core/berror"
+	"github.com/rachelos/rungo/core/berror"
 )
 
 // Cache interface contains all behaviors for cache adapter.

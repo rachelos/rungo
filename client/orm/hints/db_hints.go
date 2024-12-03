@@ -15,7 +15,7 @@
 package hints
 
 import (
-	"gitee.com/rachel_os/rungo/core/utils"
+	"github.com/rachelos/rungo/core/utils"
 )
 
 const (

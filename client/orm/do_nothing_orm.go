@@ -18,7 +18,7 @@ import (
 	"context"
 	"database/sql"
 
-	"gitee.com/rachel_os/rungo/core/utils"
+	"github.com/rachelos/rungo/core/utils"
 )
 
 // DoNothingOrm won't do anything, usually you use this to custom your mock Ormer implementation

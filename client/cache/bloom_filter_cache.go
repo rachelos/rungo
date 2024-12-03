@@ -19,7 +19,7 @@ import (
 	"errors"
 	"time"
 
-	"gitee.com/rachel_os/rungo/core/berror"
+	"github.com/rachelos/rungo/core/berror"
 )
 
 type BloomFilterCache struct {

@@ -29,10 +29,10 @@ import (
 	"sync"
 	"time"
 
-	"gitee.com/rachel_os/rungo/core/logs"
-	"gitee.com/rachel_os/rungo/core/utils"
-	beecontext "gitee.com/rachel_os/rungo/server/web/context"
-	"gitee.com/rachel_os/rungo/server/web/context/param"
+	"github.com/rachelos/rungo/core/logs"
+	"github.com/rachelos/rungo/core/utils"
+	beecontext "github.com/rachelos/rungo/server/web/context"
+	"github.com/rachelos/rungo/server/web/context/param"
 )
 
 // default filter execution points

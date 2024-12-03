@@ -19,7 +19,7 @@ import (
 	"strconv"
 	"time"
 
-	"gitee.com/rachel_os/rungo/client/orm/internal/utils"
+	"github.com/rachelos/rungo/client/orm/internal/utils"
 )
 
 // Define the Type enum

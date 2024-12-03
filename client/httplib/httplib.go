@@ -15,7 +15,7 @@
 // Package httplib is used as http.Client
 // Usage:
 //
-// import "gitee.com/rachel_os/rungo/client/httplib"
+// import "github.com/rachelos/rungo/client/httplib"
 //
 //	b := httplib.Post("http://beego.vip/")
 //	b.Param("username","astaxie")
@@ -48,8 +48,8 @@ import (
 
 	"gopkg.in/yaml.v3"
 
-	"gitee.com/rachel_os/rungo/core/berror"
-	"gitee.com/rachel_os/rungo/core/logs"
+	"github.com/rachelos/rungo/core/berror"
+	"github.com/rachelos/rungo/core/logs"
 )
 
 const contentTypeKey = "Content-Type"

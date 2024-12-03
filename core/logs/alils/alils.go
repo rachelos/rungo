@@ -8,7 +8,7 @@ import (
 
 	"github.com/gogo/protobuf/proto"
 
-	"gitee.com/rachel_os/rungo/core/logs"
+	"github.com/rachelos/rungo/core/logs"
 )
 
 const (

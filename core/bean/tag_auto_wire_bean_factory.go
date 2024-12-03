@@ -20,7 +20,7 @@ import (
 	"reflect"
 	"strconv"
 
-	"gitee.com/rachel_os/rungo/core/logs"
+	"github.com/rachelos/rungo/core/logs"
 )
 
 const DefaultValueTagKey = "default"

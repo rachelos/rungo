@@ -26,7 +26,7 @@ import (
 	"github.com/bits-and-blooms/bloom/v3"
 	"github.com/stretchr/testify/assert"
 
-	"gitee.com/rachel_os/rungo/core/berror"
+	"github.com/rachelos/rungo/core/berror"
 )
 
 type MockDB struct {

@@ -19,10 +19,10 @@ import (
 	"strings"
 	"time"
 
-	"gitee.com/rachel_os/rungo/client/orm/internal/models"
+	"github.com/rachelos/rungo/client/orm/internal/models"
 
-	"gitee.com/rachel_os/rungo/client/orm/clauses"
-	"gitee.com/rachel_os/rungo/client/orm/clauses/order_clause"
+	"github.com/rachelos/rungo/client/orm/clauses"
+	"github.com/rachelos/rungo/client/orm/clauses/order_clause"
 )
 
 // table info struct.

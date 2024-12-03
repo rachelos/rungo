@@ -28,7 +28,7 @@ import (
 	"strings"
 	"sync"
 
-	"gitee.com/rachel_os/rungo/server/web/session"
+	"github.com/rachelos/rungo/server/web/session"
 )
 
 // Regexes for checking the accept headers

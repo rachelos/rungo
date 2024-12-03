@@ -20,7 +20,7 @@ import (
 	"reflect"
 	"strings"
 
-	"gitee.com/rachel_os/rungo/client/orm/internal/utils"
+	"github.com/rachelos/rungo/client/orm/internal/utils"
 )
 
 var errSkipField = errors.New("skip field")
@@ -197,7 +197,7 @@ checkType:
 		}
 		fieldType = f.FieldType()
 		if fieldType&IsRelField > 0 {
-			err = fmt.Errorf("unsupport type custom field, please refer to https://gitee.com/rachel_os/rungo/blob/master/orm/models_fields.go#L24-L42")
+			err = fmt.Errorf("unsupport type custom field, please refer to https://github.com/rachelos/rungo/blob/master/orm/models_fields.go#L24-L42")
 			goto end
 		}
 	default:

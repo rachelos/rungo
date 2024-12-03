@@ -26,8 +26,8 @@ import (
 
 	"github.com/mitchellh/mapstructure"
 
-	"gitee.com/rachel_os/rungo/core/config"
-	"gitee.com/rachel_os/rungo/core/logs"
+	"github.com/rachelos/rungo/core/config"
+	"github.com/rachelos/rungo/core/logs"
 )
 
 // JSONConfig is a json config parser and implements Config interface.

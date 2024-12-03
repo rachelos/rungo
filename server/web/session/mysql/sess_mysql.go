@@ -30,8 +30,8 @@
 // Usage:
 // import(
 //
-//	_ "gitee.com/rachel_os/rungo/server/web/session/mysql"
-//	"gitee.com/rachel_os/rungo/server/web/session"
+//	_ "github.com/rachelos/rungo/server/web/session/mysql"
+//	"github.com/rachelos/rungo/server/web/session"
 //
 // )
 //
@@ -50,7 +50,7 @@ import (
 
 	_ "github.com/go-sql-driver/mysql"
 
-	"gitee.com/rachel_os/rungo/server/web/session"
+	"github.com/rachelos/rungo/server/web/session"
 )
 
 var (

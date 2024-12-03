@@ -6,7 +6,7 @@ and `database/sql/driver`.
 
 ## How to install?
 
-	go get gitee.com/rachel_os/rungo/server/web/session
+	go get github.com/rachelos/rungo/server/web/session
 
 ## What providers are supported?
 
@@ -17,7 +17,7 @@ As of now this session manager support memory, file, Redis and MySQL.
 First you must import it
 
 	import (
-		"gitee.com/rachel_os/rungo/server/web/session"
+		"github.com/rachelos/rungo/server/web/session"
 	)
 
 Then in you web app init the global session manager

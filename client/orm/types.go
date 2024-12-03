@@ -20,10 +20,10 @@ import (
 	"reflect"
 	"time"
 
-	"gitee.com/rachel_os/rungo/client/orm/internal/models"
+	"github.com/rachelos/rungo/client/orm/internal/models"
 
-	"gitee.com/rachel_os/rungo/client/orm/clauses/order_clause"
-	"gitee.com/rachel_os/rungo/core/utils"
+	"github.com/rachelos/rungo/client/orm/clauses/order_clause"
+	"github.com/rachelos/rungo/core/utils"
 )
 
 // TableNameI is usually used by model

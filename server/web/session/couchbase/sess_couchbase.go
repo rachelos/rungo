@@ -21,8 +21,8 @@
 // Usage:
 // import(
 //
-//	_ "gitee.com/rachel_os/rungo/server/web/session/couchbase"
-//	"gitee.com/rachel_os/rungo/server/web/session"
+//	_ "github.com/rachelos/rungo/server/web/session/couchbase"
+//	"github.com/rachelos/rungo/server/web/session"
 //
 // )
 //
@@ -41,7 +41,7 @@ import (
 
 	couchbase "github.com/couchbase/go-couchbase"
 
-	"gitee.com/rachel_os/rungo/server/web/session"
+	"github.com/rachelos/rungo/server/web/session"
 )
 
 var couchbpder = &Provider{}

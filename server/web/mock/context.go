@@ -18,7 +18,7 @@ import (
 	"net/http"
 	"net/http/httptest"
 
-	beegoCtx "gitee.com/rachel_os/rungo/server/web/context"
+	beegoCtx "github.com/rachelos/rungo/server/web/context"
 )
 
 func NewMockContext(req *http.Request) (*beegoCtx.Context, *httptest.ResponseRecorder) {

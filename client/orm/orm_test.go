@@ -28,14 +28,14 @@ import (
 	"testing"
 	"time"
 
-	"gitee.com/rachel_os/rungo/client/orm/internal/utils"
+	"github.com/rachelos/rungo/client/orm/internal/utils"
 
-	"gitee.com/rachel_os/rungo/client/orm/internal/models"
+	"github.com/rachelos/rungo/client/orm/internal/models"
 
 	"github.com/stretchr/testify/assert"
 
-	"gitee.com/rachel_os/rungo/client/orm/clauses/order_clause"
-	"gitee.com/rachel_os/rungo/client/orm/hints"
+	"github.com/rachelos/rungo/client/orm/clauses/order_clause"
+	"github.com/rachelos/rungo/client/orm/hints"
 )
 
 var _ = os.PathSeparator

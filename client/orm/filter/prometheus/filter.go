@@ -23,7 +23,7 @@ import (
 
 	"github.com/prometheus/client_golang/prometheus"
 
-	"gitee.com/rachel_os/rungo/client/orm"
+	"github.com/rachelos/rungo/client/orm"
 )
 
 // FilterChainBuilder is an extension point,

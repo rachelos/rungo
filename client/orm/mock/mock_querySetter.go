@@ -17,8 +17,8 @@ package mock
 import (
 	"context"
 
-	"gitee.com/rachel_os/rungo/client/orm"
-	"gitee.com/rachel_os/rungo/client/orm/clauses/order_clause"
+	"github.com/rachelos/rungo/client/orm"
+	"github.com/rachelos/rungo/client/orm/clauses/order_clause"
 )
 
 // DoNothingQuerySetter do nothing

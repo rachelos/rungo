@@ -19,7 +19,7 @@ import (
 	"fmt"
 	"strings"
 
-	imodels "gitee.com/rachel_os/rungo/client/orm/internal/models"
+	imodels "github.com/rachelos/rungo/client/orm/internal/models"
 )
 
 // getDbDropSQL Get database scheme drop sql queries

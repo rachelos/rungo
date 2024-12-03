@@ -22,7 +22,7 @@ import (
 	"go.opentelemetry.io/otel/attribute"
 	otelTrace "go.opentelemetry.io/otel/trace"
 
-	"gitee.com/rachel_os/rungo/client/orm"
+	"github.com/rachelos/rungo/client/orm"
 )
 
 type (

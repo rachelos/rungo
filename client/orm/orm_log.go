@@ -22,7 +22,7 @@ import (
 	"strings"
 	"time"
 
-	"gitee.com/rachel_os/rungo/client/orm/internal/logs"
+	"github.com/rachelos/rungo/client/orm/internal/logs"
 )
 
 type Log = logs.Log

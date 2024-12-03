@@ -21,8 +21,8 @@
 // Usage:
 //
 //	import(
-//	  _ "gitee.com/rachel_os/rungo/core/config/xml"
-//	    "gitee.com/rachel_os/rungo/core/config"
+//	  _ "github.com/rachelos/rungo/core/config/xml"
+//	    "github.com/rachelos/rungo/core/config"
 //	)
 //
 //	cnf, err := config.NewConfig("xml", "config.xml")
@@ -41,8 +41,8 @@ import (
 
 	"github.com/beego/x2j"
 
-	"gitee.com/rachel_os/rungo/core/config"
-	"gitee.com/rachel_os/rungo/core/logs"
+	"github.com/rachelos/rungo/core/config"
+	"github.com/rachelos/rungo/core/logs"
 )
 
 // Config is a xml config parser and implements Config interface.

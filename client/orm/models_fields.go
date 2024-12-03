@@ -15,7 +15,7 @@
 package orm
 
 import (
-	"gitee.com/rachel_os/rungo/client/orm/internal/models"
+	"github.com/rachelos/rungo/client/orm/internal/models"
 )
 
 // Define the Type enum

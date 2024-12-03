@@ -19,7 +19,7 @@ import (
 	"fmt"
 	"reflect"
 
-	"gitee.com/rachel_os/rungo/client/orm/internal/models"
+	"github.com/rachelos/rungo/client/orm/internal/models"
 )
 
 // an insert queryer struct

@@ -20,8 +20,8 @@ import (
 	"net/http"
 	"net/http/httputil"
 
-	"gitee.com/rachel_os/rungo/client/httplib"
-	"gitee.com/rachel_os/rungo/core/logs"
+	"github.com/rachelos/rungo/client/httplib"
+	"github.com/rachelos/rungo/core/logs"
 )
 
 // FilterChainBuilder can build a log filter

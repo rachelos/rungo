@@ -17,7 +17,7 @@ package mock
 import (
 	"context"
 
-	"gitee.com/rachel_os/rungo/client/orm"
+	"github.com/rachelos/rungo/client/orm"
 )
 
 type Mock struct {

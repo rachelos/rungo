@@ -26,7 +26,7 @@ import (
 	"strconv"
 	"time"
 
-	"gitee.com/rachel_os/rungo/core/utils"
+	"github.com/rachelos/rungo/core/utils"
 )
 
 var (

@@ -21,7 +21,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"gitee.com/rachel_os/rungo/core/config"
+	"github.com/rachelos/rungo/core/config"
 )
 
 func TestConfig_Parse(t *testing.T) {

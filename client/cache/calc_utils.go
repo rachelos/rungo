@@ -3,7 +3,7 @@ package cache
 import (
 	"math"
 
-	"gitee.com/rachel_os/rungo/core/berror"
+	"github.com/rachelos/rungo/core/berror"
 )
 
 var (

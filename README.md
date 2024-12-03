@@ -11,14 +11,14 @@
 
 #### Download and install
 
-    go get gitee.com/rachel_os/rungo@latest
+    go get github.com/rachelos/rungo@latest
 
 #### Create file `hello.go`
 
 ```go
 package main
 
-import "gitee.com/rachel_os/rungo/server/web"
+import "github.com/rachelos/rungo/server/web"
 
 func main() {
 	web.Run()

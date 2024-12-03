@@ -33,8 +33,8 @@ import (
 	"strings"
 	"time"
 
-	"gitee.com/rachel_os/rungo/client/orm"
-	"gitee.com/rachel_os/rungo/core/logs"
+	"github.com/rachelos/rungo/client/orm"
+	"github.com/rachelos/rungo/core/logs"
 )
 
 // const the data format for the bee generate migration datatype

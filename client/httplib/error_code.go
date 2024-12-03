@@ -15,7 +15,7 @@
 package httplib
 
 import (
-	"gitee.com/rachel_os/rungo/core/berror"
+	"github.com/rachelos/rungo/core/berror"
 )
 
 var InvalidUrl = berror.DefineCode(4001001, moduleName, "InvalidUrl", `

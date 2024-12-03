@@ -1,4 +1,4 @@
-module gitee.com/rachel_os/rungo
+module github.com/rachelos/rungo
 
 go 1.22.7
 

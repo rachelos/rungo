@@ -19,9 +19,9 @@ import (
 	"reflect"
 	"time"
 
-	"gitee.com/rachel_os/rungo/client/orm/internal/utils"
+	"github.com/rachelos/rungo/client/orm/internal/utils"
 
-	"gitee.com/rachel_os/rungo/client/orm/internal/models"
+	"github.com/rachelos/rungo/client/orm/internal/models"
 )
 
 // Get table alias.

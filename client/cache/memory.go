@@ -22,7 +22,7 @@ import (
 	"sync"
 	"time"
 
-	"gitee.com/rachel_os/rungo/core/berror"
+	"github.com/rachelos/rungo/core/berror"
 )
 
 // DefaultEvery sets a timer for how often to recycle the expired cache items in memory (in seconds)

@@ -20,9 +20,9 @@
 //
 // import (
 //
-//	"gitee.com/rachel_os/rungo"
-//	"gitee.com/rachel_os/rungo/client/cache"
-//	"gitee.com/rachel_os/rungo/server/web/captcha"
+//	"github.com/rachelos/rungo"
+//	"github.com/rachelos/rungo/client/cache"
+//	"github.com/rachelos/rungo/server/web/captcha"
 //
 // )
 //
@@ -72,10 +72,10 @@ import (
 	"strings"
 	"time"
 
-	"gitee.com/rachel_os/rungo/core/logs"
-	"gitee.com/rachel_os/rungo/core/utils"
-	"gitee.com/rachel_os/rungo/server/web"
-	"gitee.com/rachel_os/rungo/server/web/context"
+	"github.com/rachelos/rungo/core/logs"
+	"github.com/rachelos/rungo/core/utils"
+	"github.com/rachelos/rungo/server/web"
+	"github.com/rachelos/rungo/server/web/context"
 )
 
 var defaultChars = []byte{0, 1, 2, 3, 4, 5, 6, 7, 8, 9}

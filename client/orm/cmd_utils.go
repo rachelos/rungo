@@ -18,7 +18,7 @@ import (
 	"fmt"
 	"strings"
 
-	"gitee.com/rachel_os/rungo/client/orm/internal/models"
+	"github.com/rachelos/rungo/client/orm/internal/models"
 )
 
 type dbIndex struct {

@@ -3,10 +3,10 @@ package session
 import (
 	"context"
 
-	"gitee.com/rachel_os/rungo/core/logs"
-	"gitee.com/rachel_os/rungo/server/web"
-	webContext "gitee.com/rachel_os/rungo/server/web/context"
-	"gitee.com/rachel_os/rungo/server/web/session"
+	"github.com/rachelos/rungo/core/logs"
+	"github.com/rachelos/rungo/server/web"
+	webContext "github.com/rachelos/rungo/server/web/context"
+	"github.com/rachelos/rungo/server/web/session"
 )
 
 // Session maintain session for web service

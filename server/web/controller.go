@@ -32,9 +32,9 @@ import (
 
 	"google.golang.org/protobuf/proto"
 
-	"gitee.com/rachel_os/rungo/server/web/context"
-	"gitee.com/rachel_os/rungo/server/web/context/param"
-	"gitee.com/rachel_os/rungo/server/web/session"
+	"github.com/rachelos/rungo/server/web/context"
+	"github.com/rachelos/rungo/server/web/context/param"
+	"github.com/rachelos/rungo/server/web/session"
 )
 
 var (

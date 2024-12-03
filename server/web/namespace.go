@@ -18,7 +18,7 @@ import (
 	"net/http"
 	"strings"
 
-	beecontext "gitee.com/rachel_os/rungo/server/web/context"
+	beecontext "github.com/rachelos/rungo/server/web/context"
 )
 
 type namespaceCond func(*beecontext.Context) bool
@@ -100,91 +100,91 @@ func (n *Namespace) Filter(action string, filter ...FilterFunc) *Namespace {
 }
 
 // Router same as beego.Rourer
-// refer: https://godoc.org/gitee.com/rachel_os/rungo#Router
+// refer: https://godoc.org/github.com/rachelos/rungo#Router
 func (n *Namespace) Router(rootpath string, c ControllerInterface, mappingMethods ...string) *Namespace {
 	n.handlers.Add(rootpath, c, WithRouterMethods(c, mappingMethods...))
 	return n
 }
 
 // AutoRouter same as beego.AutoRouter
-// refer: https://godoc.org/gitee.com/rachel_os/rungo#AutoRouter
+// refer: https://godoc.org/github.com/rachelos/rungo#AutoRouter
 func (n *Namespace) AutoRouter(c ControllerInterface) *Namespace {
 	n.handlers.AddAuto(c)
 	return n
 }
 
 // AutoPrefix same as beego.AutoPrefix
-// refer: https://godoc.org/gitee.com/rachel_os/rungo#AutoPrefix
+// refer: https://godoc.org/github.com/rachelos/rungo#AutoPrefix
 func (n *Namespace) AutoPrefix(prefix string, c ControllerInterface) *Namespace {
 	n.handlers.AddAutoPrefix(prefix, c)
 	return n
 }
 
 // Get same as beego.Get
-// refer: https://godoc.org/gitee.com/rachel_os/rungo#Get
+// refer: https://godoc.org/github.com/rachelos/rungo#Get
 func (n *Namespace) Get(rootpath string, f HandleFunc) *Namespace {
 	n.handlers.Get(rootpath, f)
 	return n
 }
 
 // Post same as beego.Post
-// refer: https://godoc.org/gitee.com/rachel_os/rungo#Post
+// refer: https://godoc.org/github.com/rachelos/rungo#Post
 func (n *Namespace) Post(rootpath string, f HandleFunc) *Namespace {
 	n.handlers.Post(rootpath, f)
 	return n
 }
 
 // Delete same as beego.Delete
-// refer: https://godoc.org/gitee.com/rachel_os/rungo#Delete
+// refer: https://godoc.org/github.com/rachelos/rungo#Delete
 func (n *Namespace) Delete(rootpath string, f HandleFunc) *Namespace {
 	n.handlers.Delete(rootpath, f)
 	return n
 }
 
 // Put same as beego.Put
-// refer: https://godoc.org/gitee.com/rachel_os/rungo#Put
+// refer: https://godoc.org/github.com/rachelos/rungo#Put
 func (n *Namespace) Put(rootpath string, f HandleFunc) *Namespace {
 	n.handlers.Put(rootpath, f)
 	return n
 }
 
 // Head same as beego.Head
-// refer: https://godoc.org/gitee.com/rachel_os/rungo#Head
+// refer: https://godoc.org/github.com/rachelos/rungo#Head
 func (n *Namespace) Head(rootpath string, f HandleFunc) *Namespace {
 	n.handlers.Head(rootpath, f)
 	return n
 }
 
 // Options same as beego.Options
-// refer: https://godoc.org/gitee.com/rachel_os/rungo#Options
+// refer: https://godoc.org/github.com/rachelos/rungo#Options
 func (n *Namespace) Options(rootpath string, f HandleFunc) *Namespace {
 	n.handlers.Options(rootpath, f)
 	return n
 }
 
 // Patch same as beego.Patch
-// refer: https://godoc.org/gitee.com/rachel_os/rungo#Patch
+// refer: https://godoc.org/github.com/rachelos/rungo#Patch
 func (n *Namespace) Patch(rootpath string, f HandleFunc) *Namespace {
 	n.handlers.Patch(rootpath, f)
 	return n
 }
 
 // Any same as beego.Any
-// refer: https://godoc.org/gitee.com/rachel_os/rungo#Any
+// refer: https://godoc.org/github.com/rachelos/rungo#Any
 func (n *Namespace) Any(rootpath string, f HandleFunc) *Namespace {
 	n.handlers.Any(rootpath, f)
 	return n
 }
 
 // Handler same as beego.Handler
-// refer: https://godoc.org/gitee.com/rachel_os/rungo#Handler
+// refer: https://godoc.org/github.com/rachelos/rungo#Handler
 func (n *Namespace) Handler(rootpath string, h http.Handler) *Namespace {
 	n.handlers.Handler(rootpath, h)
 	return n
 }
 
 // Include add include class
-// refer: https://godoc.org/gitee.com/rachel_os/rungo#Include
+// refer: https://godoc.org/github.com/rachelos/rungo#Include
 func (n *Namespace) Include(cList ...ControllerInterface) *Namespace {
 	n.handlers.Include(cList...)
 	return n

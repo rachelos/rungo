@@ -18,8 +18,8 @@ import (
 	"sync"
 	"time"
 
-	"gitee.com/rachel_os/rungo/server/web"
-	"gitee.com/rachel_os/rungo/server/web/context"
+	"github.com/rachelos/rungo/server/web"
+	"github.com/rachelos/rungo/server/web/context"
 )
 
 // limiterOption is constructor option

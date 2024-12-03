@@ -29,7 +29,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"gitee.com/rachel_os/rungo/server/web/context"
+	"github.com/rachelos/rungo/server/web/context"
 )
 
 var (

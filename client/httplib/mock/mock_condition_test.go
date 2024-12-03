@@ -20,7 +20,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"gitee.com/rachel_os/rungo/client/httplib"
+	"github.com/rachelos/rungo/client/httplib"
 )
 
 func TestSimpleConditionMatchPath(t *testing.T) {

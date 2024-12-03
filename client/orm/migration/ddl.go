@@ -17,7 +17,7 @@ package migration
 import (
 	"fmt"
 
-	"gitee.com/rachel_os/rungo/core/logs"
+	"github.com/rachelos/rungo/core/logs"
 )
 
 // Index struct defines the structure of Index Columns

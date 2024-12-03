@@ -19,7 +19,7 @@
 //
 //	import (
 //		"fmt"
-//		"gitee.com/rachel_os/rungo/client/orm"
+//		"github.com/rachelos/rungo/client/orm"
 //		_ "github.com/go-sql-driver/mysql" // import your used driver
 //	)
 //
@@ -57,14 +57,14 @@ import (
 	"os"
 	"reflect"
 
-	iutils "gitee.com/rachel_os/rungo/client/orm/internal/utils"
+	iutils "github.com/rachelos/rungo/client/orm/internal/utils"
 
-	"gitee.com/rachel_os/rungo/client/orm/internal/models"
+	"github.com/rachelos/rungo/client/orm/internal/models"
 
-	"gitee.com/rachel_os/rungo/client/orm/clauses/order_clause"
-	"gitee.com/rachel_os/rungo/client/orm/hints"
-	"gitee.com/rachel_os/rungo/core/logs"
-	"gitee.com/rachel_os/rungo/core/utils"
+	"github.com/rachelos/rungo/client/orm/clauses/order_clause"
+	"github.com/rachelos/rungo/client/orm/hints"
+	"github.com/rachelos/rungo/core/logs"
+	"github.com/rachelos/rungo/core/utils"
 )
 
 // DebugQueries define the debug

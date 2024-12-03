@@ -17,7 +17,7 @@ package captcha
 import (
 	"testing"
 
-	"gitee.com/rachel_os/rungo/core/utils"
+	"github.com/rachelos/rungo/core/utils"
 )
 
 type byteCounter struct {

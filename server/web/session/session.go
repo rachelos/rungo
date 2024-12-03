@@ -17,7 +17,7 @@
 // Usage:
 // import(
 //
-//	"gitee.com/rachel_os/rungo/server/web/session"
+//	"github.com/rachelos/rungo/server/web/session"
 //
 // )
 //

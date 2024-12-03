@@ -11,7 +11,7 @@ import (
 
 	"github.com/ssdb/gossdb/ssdb"
 
-	"gitee.com/rachel_os/rungo/server/web/session"
+	"github.com/rachelos/rungo/server/web/session"
 )
 
 var ssdbProvider = &Provider{}

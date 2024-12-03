@@ -20,7 +20,7 @@ import (
 	"net/textproto"
 	"regexp"
 
-	"gitee.com/rachel_os/rungo/client/httplib"
+	"github.com/rachelos/rungo/client/httplib"
 )
 
 type RequestCondition interface {

@@ -21,10 +21,10 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"gitee.com/rachel_os/rungo/client/orm/clauses/order_clause"
-	"gitee.com/rachel_os/rungo/client/orm/internal/buffers"
+	"github.com/rachelos/rungo/client/orm/clauses/order_clause"
+	"github.com/rachelos/rungo/client/orm/internal/buffers"
 
-	"gitee.com/rachel_os/rungo/client/orm/internal/models"
+	"github.com/rachelos/rungo/client/orm/internal/models"
 )
 
 func TestDbBase_InsertValueSQL(t *testing.T) {

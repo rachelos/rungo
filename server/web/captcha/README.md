@@ -6,9 +6,9 @@ an example for use captcha
 package controllers
 
 import (
-	"gitee.com/rachel_os/rungo"
-	"gitee.com/rachel_os/rungo/client/cache"
-	"gitee.com/rachel_os/rungo/server/web/captcha"
+	"github.com/rachelos/rungo"
+	"github.com/rachelos/rungo/client/cache"
+	"github.com/rachelos/rungo/server/web/captcha"
 )
 
 var cpt *captcha.Captcha

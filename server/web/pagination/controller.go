@@ -15,8 +15,8 @@
 package pagination
 
 import (
-	"gitee.com/rachel_os/rungo/core/utils/pagination"
-	"gitee.com/rachel_os/rungo/server/web/context"
+	"github.com/rachelos/rungo/core/utils/pagination"
+	"github.com/rachelos/rungo/server/web/context"
 )
 
 // SetPaginator Instantiates a Paginator and assigns it to context.Input.Data("paginator").

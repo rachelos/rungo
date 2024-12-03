@@ -21,9 +21,9 @@ import (
 
 	"github.com/casbin/casbin"
 
-	"gitee.com/rachel_os/rungo/server/web"
-	"gitee.com/rachel_os/rungo/server/web/context"
-	"gitee.com/rachel_os/rungo/server/web/filter/auth"
+	"github.com/rachelos/rungo/server/web"
+	"github.com/rachelos/rungo/server/web/context"
+	"github.com/rachelos/rungo/server/web/filter/auth"
 )
 
 func testRequest(t *testing.T, handler *web.ControllerRegister, user string, path string, method string, code int) {

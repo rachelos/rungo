@@ -20,12 +20,12 @@ import (
 	"reflect"
 	"time"
 
-	utils2 "gitee.com/rachel_os/rungo/client/orm/internal/utils"
+	utils2 "github.com/rachelos/rungo/client/orm/internal/utils"
 
-	"gitee.com/rachel_os/rungo/client/orm/internal/models"
+	"github.com/rachelos/rungo/client/orm/internal/models"
 
-	"gitee.com/rachel_os/rungo/core/logs"
-	"gitee.com/rachel_os/rungo/core/utils"
+	"github.com/rachelos/rungo/core/logs"
+	"github.com/rachelos/rungo/core/utils"
 )
 
 const (

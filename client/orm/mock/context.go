@@ -17,7 +17,7 @@ package mock
 import (
 	"context"
 
-	"gitee.com/rachel_os/rungo/core/logs"
+	"github.com/rachelos/rungo/core/logs"
 )
 
 type mockCtxKeyType string

@@ -6,8 +6,8 @@ import (
 	"testing"
 	"time"
 
-	"gitee.com/rachel_os/rungo/server/web"
-	"gitee.com/rachel_os/rungo/server/web/context"
+	"github.com/rachelos/rungo/server/web"
+	"github.com/rachelos/rungo/server/web/context"
 )
 
 func testRequest(t *testing.T, handler *web.ControllerRegister, requestIP, method, path string, code int) {

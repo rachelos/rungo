@@ -15,7 +15,7 @@
 // Package config is used to parse config.
 // Usage:
 //
-//	import "gitee.com/rachel_os/rungo/core/config"
+//	import "github.com/rachelos/rungo/core/config"
 //
 // Examples.
 //

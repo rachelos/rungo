@@ -20,8 +20,8 @@ import (
 
 	"github.com/google/uuid"
 
-	"gitee.com/rachel_os/rungo/server/web"
-	"gitee.com/rachel_os/rungo/server/web/session"
+	"github.com/rachelos/rungo/server/web"
+	"github.com/rachelos/rungo/server/web/session"
 )
 
 // NewSessionProvider create new SessionProvider

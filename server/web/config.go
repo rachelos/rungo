@@ -24,12 +24,12 @@ import (
 	"runtime"
 	"strings"
 
-	"gitee.com/rachel_os/rungo"
-	"gitee.com/rachel_os/rungo/core/config"
-	"gitee.com/rachel_os/rungo/core/logs"
-	"gitee.com/rachel_os/rungo/core/utils"
-	"gitee.com/rachel_os/rungo/server/web/context"
-	"gitee.com/rachel_os/rungo/server/web/session"
+	beego "github.com/rachelos/rungo"
+	"github.com/rachelos/rungo/core/config"
+	"github.com/rachelos/rungo/core/logs"
+	"github.com/rachelos/rungo/core/utils"
+	"github.com/rachelos/rungo/server/web/context"
+	"github.com/rachelos/rungo/server/web/session"
 )
 
 // Config is the main struct for BConfig

@@ -18,7 +18,7 @@ import (
 	"context"
 	"net/http"
 
-	"gitee.com/rachel_os/rungo/client/httplib"
+	"github.com/rachelos/rungo/client/httplib"
 )
 
 // MockResponse will return mock response if find any suitable mock data

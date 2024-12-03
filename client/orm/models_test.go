@@ -22,7 +22,7 @@ import (
 	"strings"
 	"time"
 
-	"gitee.com/rachel_os/rungo/client/orm/internal/models"
+	"github.com/rachelos/rungo/client/orm/internal/models"
 
 	_ "github.com/go-sql-driver/mysql"
 	_ "github.com/lib/pq"
@@ -336,7 +336,7 @@ type Post struct {
 	Created          time.Time `orm:"auto_now_add"`
 	Updated          time.Time `orm:"auto_now"`
 	UpdatedPrecision time.Time `orm:"auto_now;type(datetime);precision(4)"`
-	Tags             []*Tag    `orm:"rel(m2m);rel_through(gitee.com/rachel_os/rungo/client/orm.PostTags)"`
+	Tags             []*Tag    `orm:"rel(m2m);rel_through(github.com/rachelos/rungo/client/orm.PostTags)"`
 }
 
 func (u *Post) TableIndex() [][]string {
@@ -399,7 +399,7 @@ type Group struct {
 type Permission struct {
 	ID     int `orm:"column(id)"`
 	Name   string
-	Groups []*Group `orm:"rel(m2m);rel_through(gitee.com/rachel_os/rungo/client/orm.GroupPermissions)"`
+	Groups []*Group `orm:"rel(m2m);rel_through(github.com/rachelos/rungo/client/orm.GroupPermissions)"`
 }
 
 type GroupPermissions struct {
@@ -507,7 +507,7 @@ var helpinfo = `need driver and source!
 
 	usage:
 
-	go Get -u gitee.com/rachel_os/rungo/client/orm
+	go Get -u github.com/rachelos/rungo/client/orm
 	go Get -u github.com/go-sql-driver/mysql
 	go Get -u github.com/mattn/go-sqlite3
 	go Get -u github.com/lib/pq
@@ -517,25 +517,25 @@ var helpinfo = `need driver and source!
 	mysql -u root -e 'create database orm_test;'
 	export ORM_DRIVER=mysql
 	export ORM_SOURCE="root:@/orm_test?charset=utf8"
-	go test -v gitee.com/rachel_os/rungo/client/orm
+	go test -v github.com/rachelos/rungo/client/orm
 
 
 	#### Sqlite3
 	export ORM_DRIVER=sqlite3
 	export ORM_SOURCE='file:memory_test?mode=memory'
-	go test -v gitee.com/rachel_os/rungo/client/orm
+	go test -v github.com/rachelos/rungo/client/orm
 
 
 	#### PostgreSQL
 	psql -c 'create database orm_test;' -U postgres
 	export ORM_DRIVER=postgres
 	export ORM_SOURCE="user=postgres dbname=orm_test sslmode=disable"
-	go test -v gitee.com/rachel_os/rungo/client/orm
+	go test -v github.com/rachelos/rungo/client/orm
 
 	#### TiDB
 	export ORM_DRIVER=tidb
 	export ORM_SOURCE='memory://test/test'
-	go test -v gitee.com/rachel_os/rungo/pgk/orm
+	go test -v github.com/rachelos/rungo/pgk/orm
 
 	`
 

@@ -22,9 +22,9 @@ import (
 	"strings"
 	"time"
 
-	"gitee.com/rachel_os/rungo/client/orm/internal/models"
+	"github.com/rachelos/rungo/client/orm/internal/models"
 
-	"gitee.com/rachel_os/rungo/client/orm/hints"
+	"github.com/rachelos/rungo/client/orm/hints"
 )
 
 // sqlite operators.

@@ -6,9 +6,9 @@ import (
 	"net/http"
 	"path/filepath"
 
-	"gitee.com/rachel_os/rungo/core/logs"
-	"gitee.com/rachel_os/rungo/server/web/context"
-	"gitee.com/rachel_os/rungo/server/web/session"
+	"github.com/rachelos/rungo/core/logs"
+	"github.com/rachelos/rungo/server/web/context"
+	"github.com/rachelos/rungo/server/web/session"
 )
 
 // register MIME type with content type

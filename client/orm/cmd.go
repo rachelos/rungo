@@ -21,9 +21,9 @@ import (
 	"os"
 	"strings"
 
-	"gitee.com/rachel_os/rungo/client/orm/internal/utils"
+	"github.com/rachelos/rungo/client/orm/internal/utils"
 
-	"gitee.com/rachel_os/rungo/client/orm/internal/models"
+	"github.com/rachelos/rungo/client/orm/internal/models"
 )
 
 type commander interface {

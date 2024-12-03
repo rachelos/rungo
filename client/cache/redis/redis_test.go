@@ -25,8 +25,8 @@ import (
 	"github.com/gomodule/redigo/redis"
 	"github.com/stretchr/testify/assert"
 
-	"gitee.com/rachel_os/rungo/client/cache"
-	"gitee.com/rachel_os/rungo/core/berror"
+	"github.com/rachelos/rungo/client/cache"
+	"github.com/rachelos/rungo/core/berror"
 )
 
 func TestRedisCache(t *testing.T) {

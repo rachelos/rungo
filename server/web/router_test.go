@@ -24,8 +24,8 @@ import (
 	"strings"
 	"testing"
 
-	"gitee.com/rachel_os/rungo/core/logs"
-	"gitee.com/rachel_os/rungo/server/web/context"
+	"github.com/rachelos/rungo/core/logs"
+	"github.com/rachelos/rungo/server/web/context"
 )
 
 type PrefixTestController struct {

@@ -18,7 +18,7 @@ import (
 	"context"
 	"time"
 
-	"gitee.com/rachel_os/rungo/core/berror"
+	"github.com/rachelos/rungo/core/berror"
 )
 
 // readThroughCache is a decorator

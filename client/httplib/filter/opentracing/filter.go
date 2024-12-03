@@ -23,7 +23,7 @@ import (
 	"github.com/opentracing/opentracing-go"
 	"github.com/opentracing/opentracing-go/log"
 
-	"gitee.com/rachel_os/rungo/client/httplib"
+	"github.com/rachelos/rungo/client/httplib"
 )
 
 type FilterChainBuilder struct {

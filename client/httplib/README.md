@@ -8,7 +8,7 @@ httplib is an libs help you to curl remote url.
 
 you can use Get to crawl data.
 
-	import "gitee.com/rachel_os/rungo/client/httplib"
+	import "github.com/rachelos/rungo/client/httplib"
 
 	str, err := httplib.Get("http://beego.vip/").String()
 	if err != nil {
@@ -95,4 +95,4 @@ httplib support mutil file upload, use `req.PostFile()`
 
 See godoc for further documentation and examples.
 
-* [godoc.org/gitee.com/rachel_os/rungo/client/httplib](https://godoc.org/gitee.com/rachel_os/rungo/client/httplib)
+* [godoc.org/github.com/rachelos/rungo/client/httplib](https://godoc.org/github.com/rachelos/rungo/client/httplib)

@@ -7,18 +7,18 @@ validation is a form validation for a data validation and error collecting using
 
 Install:
 
-	go get gitee.com/rachel_os/rungo/core/validation
+	go get github.com/rachelos/rungo/core/validation
 
 Test:
 
-	go test gitee.com/rachel_os/rungo/core/validation
+	go test github.com/rachelos/rungo/core/validation
 
 ## Example
 
 Direct Use:
 
 	import (
-		"gitee.com/rachel_os/rungo/core/validation"
+		"github.com/rachelos/rungo/core/validation"
 		"log"
 	)
 
@@ -49,7 +49,7 @@ Direct Use:
 Struct Tag Use:
 
 	import (
-		"gitee.com/rachel_os/rungo/core/validation"
+		"github.com/rachelos/rungo/core/validation"
 	)
 
 	// validation function follow with "valid" tag
@@ -81,7 +81,7 @@ Struct Tag Use:
 Use custom function:
 
 	import (
-		"gitee.com/rachel_os/rungo/core/validation"
+		"github.com/rachelos/rungo/core/validation"
 	)
 
 	type user struct {

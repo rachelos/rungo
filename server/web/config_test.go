@@ -19,7 +19,7 @@ import (
 	"reflect"
 	"testing"
 
-	beeJson "gitee.com/rachel_os/rungo/core/config/json"
+	beeJson "github.com/rachelos/rungo/core/config/json"
 )
 
 func TestDefaults(t *testing.T) {

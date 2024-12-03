@@ -15,7 +15,7 @@
 // Package logs provide a general log interface
 // Usage:
 //
-// import "gitee.com/rachel_os/rungo/core/logs"
+// import "github.com/rachelos/rungo/core/logs"
 //
 //	log := NewLogger(10000)
 //	log.SetLogger("console", "")

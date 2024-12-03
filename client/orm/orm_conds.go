@@ -18,7 +18,7 @@ import (
 	"fmt"
 	"strings"
 
-	"gitee.com/rachel_os/rungo/client/orm/clauses"
+	"github.com/rachelos/rungo/client/orm/clauses"
 )
 
 // ExprSep define the expression separation

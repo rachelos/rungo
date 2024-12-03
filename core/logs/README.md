@@ -4,7 +4,7 @@ logs is a Go logs manager. It can use many logs adapters. The repo is inspired b
 
 ## How to install?
 
-	go get gitee.com/rachel_os/rungo/core/logs
+	go get github.com/rachelos/rungo/core/logs
 
 ## What adapters are supported?
 
@@ -16,7 +16,7 @@ First you must import it
 
 ```golang
 import (
-	"gitee.com/rachel_os/rungo/core/logs"
+	"github.com/rachelos/rungo/core/logs"
 )
 ```
 

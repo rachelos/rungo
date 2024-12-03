@@ -23,7 +23,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"gitee.com/rachel_os/rungo/core/utils"
+	"github.com/rachelos/rungo/core/utils"
 )
 
 func TestFilterOrmDecoratorRead(t *testing.T) {

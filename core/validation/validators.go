@@ -23,7 +23,7 @@ import (
 	"time"
 	"unicode/utf8"
 
-	"gitee.com/rachel_os/rungo/core/logs"
+	"github.com/rachelos/rungo/core/logs"
 )
 
 // CanSkipFuncs will skip valid if RequiredFirst is true and the struct field's value is empty

@@ -21,8 +21,8 @@
 // Usage:
 // import(
 //
-//	_ "gitee.com/rachel_os/rungo/client/cache/redis"
-//	"gitee.com/rachel_os/rungo/client/cache"
+//	_ "github.com/rachelos/rungo/client/cache/redis"
+//	"github.com/rachelos/rungo/client/cache"
 //
 // )
 //
@@ -39,8 +39,8 @@ import (
 
 	"github.com/gomodule/redigo/redis"
 
-	"gitee.com/rachel_os/rungo/client/cache"
-	"gitee.com/rachel_os/rungo/core/berror"
+	"github.com/rachelos/rungo/client/cache"
+	"github.com/rachelos/rungo/core/berror"
 )
 
 const (

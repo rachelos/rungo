@@ -18,7 +18,7 @@ import (
 	"context"
 	"time"
 
-	"gitee.com/rachel_os/rungo/client/orm/internal/models"
+	"github.com/rachelos/rungo/client/orm/internal/models"
 )
 
 // Invocation represents an "Orm" invocation

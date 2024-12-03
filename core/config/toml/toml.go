@@ -20,7 +20,7 @@ import (
 
 	"github.com/pelletier/go-toml"
 
-	"gitee.com/rachel_os/rungo/core/config"
+	"github.com/rachelos/rungo/core/config"
 )
 
 const keySeparator = "."

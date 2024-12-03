@@ -28,8 +28,8 @@ import (
 
 	lru "github.com/hashicorp/golang-lru"
 
-	"gitee.com/rachel_os/rungo/core/logs"
-	"gitee.com/rachel_os/rungo/server/web/context"
+	"github.com/rachelos/rungo/core/logs"
+	"github.com/rachelos/rungo/server/web/context"
 )
 
 var errNotStaticRequest = errors.New("request not a static file request")

@@ -17,7 +17,7 @@ package web
 import (
 	"strings"
 
-	"gitee.com/rachel_os/rungo/server/web/context"
+	"github.com/rachelos/rungo/server/web/context"
 )
 
 // PolicyFunc defines a policy function which is invoked before the controller handler is executed.

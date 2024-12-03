@@ -21,8 +21,8 @@
 // Usage:
 // import(
 //
-//	_ "gitee.com/rachel_os/rungo/client/cache/memcache"
-//	"gitee.com/rachel_os/rungo/client/cache"
+//	_ "github.com/rachelos/rungo/client/cache/memcache"
+//	"github.com/rachelos/rungo/client/cache"
 //
 // )
 //
@@ -38,8 +38,8 @@ import (
 
 	"github.com/bradfitz/gomemcache/memcache"
 
-	"gitee.com/rachel_os/rungo/client/cache"
-	"gitee.com/rachel_os/rungo/core/berror"
+	"github.com/rachelos/rungo/client/cache"
+	"github.com/rachelos/rungo/core/berror"
 )
 
 // Cache Memcache adapter.

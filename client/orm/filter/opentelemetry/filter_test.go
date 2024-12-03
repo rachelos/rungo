@@ -26,7 +26,7 @@ import (
 	"go.opentelemetry.io/otel/sdk/trace"
 	otelTrace "go.opentelemetry.io/otel/trace"
 
-	"gitee.com/rachel_os/rungo/client/orm"
+	"github.com/rachelos/rungo/client/orm"
 )
 
 func TestFilterChainBuilderFilterChain(t *testing.T) {

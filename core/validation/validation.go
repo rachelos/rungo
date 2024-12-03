@@ -15,7 +15,7 @@
 // Package validation for validations
 //
 //	import (
-//		"gitee.com/rachel_os/rungo/core/validation"
+//		"github.com/rachelos/rungo/core/validation"
 //		"log"
 //	)
 //

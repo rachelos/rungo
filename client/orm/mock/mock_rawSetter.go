@@ -17,7 +17,7 @@ package mock
 import (
 	"database/sql"
 
-	"gitee.com/rachel_os/rungo/client/orm"
+	"github.com/rachelos/rungo/client/orm"
 )
 
 type DoNothingRawSetter struct{}

@@ -21,8 +21,8 @@
 // Usage:
 // import(
 //
-//	_ "gitee.com/rachel_os/rungo/server/web/session/redis_sentinel"
-//	"gitee.com/rachel_os/rungo/server/web/session"
+//	_ "github.com/rachelos/rungo/server/web/session/redis_sentinel"
+//	"github.com/rachelos/rungo/server/web/session"
 //
 // )
 //
@@ -45,7 +45,7 @@ import (
 
 	"github.com/redis/go-redis/v9"
 
-	"gitee.com/rachel_os/rungo/server/web/session"
+	"github.com/rachelos/rungo/server/web/session"
 )
 
 var redispder = &Provider{}

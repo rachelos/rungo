@@ -19,9 +19,9 @@ import (
 	"reflect"
 	"strings"
 
-	"gitee.com/rachel_os/rungo/client/orm"
-	"gitee.com/rachel_os/rungo/core/bean"
-	"gitee.com/rachel_os/rungo/core/logs"
+	"github.com/rachelos/rungo/client/orm"
+	"github.com/rachelos/rungo/core/bean"
+	"github.com/rachelos/rungo/core/logs"
 )
 
 // DefaultValueFilterChainBuilder only works for InsertXXX method,

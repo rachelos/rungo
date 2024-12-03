@@ -36,28 +36,28 @@ test-orm-mysql5: ## Run ORM unit tests on mysql5.
 	docker-compose -f scripts/orm_docker_compose.yaml up -d
 	export ORM_DRIVER=mysql
 	export ORM_SOURCE="beego:test@tcp(localhost:13306)/orm_test?charset=utf8"
-	go test -v gitee.com/rachel_os/rungo/client/orm
+	go test -v github.com/rachelos/rungo/client/orm
 	docker-compose -f scripts/orm_docker_compose.yaml down
 
 test-orm-mysql8: ## Run ORM unit tests on mysql8.
 	docker-compose -f scripts/orm_docker_compose.yaml up -d
 	export ORM_DRIVER=mysql
 	export ORM_SOURCE="beego:test@tcp(localhost:23306)/orm_test?charset=utf8"
-	go test -v gitee.com/rachel_os/rungo/client/orm
+	go test -v github.com/rachelos/rungo/client/orm
 	docker-compose -f scripts/orm_docker_compose.yaml down
 
 test-orm-pgsql: ## Run ORM unit tests on postgresql.
 	docker-compose -f scripts/orm_docker_compose.yaml up -d
 	export ORM_DRIVER=postgres
 	export ORM_SOURCE="user=postgres password=postgres dbname=orm_test sslmode=disable"
-	go test -v gitee.com/rachel_os/rungo/client/orm
+	go test -v github.com/rachelos/rungo/client/orm
 	docker-compose -f scripts/orm_docker_compose.yaml down
 
 test-orm-tidb: ## Run ORM unit tests on tidb.
 	docker-compose -f scripts/orm_docker_compose.yaml up -d
 	export ORM_DRIVER=tidb
 	export ORM_SOURCE="memory://test/test"
-	go test -v gitee.com/rachel_os/rungo/client/orm
+	go test -v github.com/rachelos/rungo/client/orm
 	docker-compose -f scripts/orm_docker_compose.yaml down
 
 .PHONY: test-orm-all

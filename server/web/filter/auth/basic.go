@@ -16,8 +16,8 @@
 // Simple Usage:
 //
 //	import(
-//		"gitee.com/rachel_os/rungo"
-//		"gitee.com/rachel_os/rungo/server/web/filter/auth"
+//		"github.com/rachelos/rungo"
+//		"github.com/rachelos/rungo/server/web/filter/auth"
 //	)
 //
 //	func main(){
@@ -40,8 +40,8 @@ import (
 	"net/http"
 	"strings"
 
-	"gitee.com/rachel_os/rungo/server/web"
-	"gitee.com/rachel_os/rungo/server/web/context"
+	"github.com/rachelos/rungo/server/web"
+	"github.com/rachelos/rungo/server/web/context"
 )
 
 var defaultRealm = "Authorization Required"

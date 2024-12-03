@@ -21,8 +21,8 @@ import (
 	"reflect"
 	"time"
 
-	"gitee.com/rachel_os/rungo/client/orm/internal/models"
-	"gitee.com/rachel_os/rungo/client/orm/internal/utils"
+	"github.com/rachelos/rungo/client/orm/internal/models"
+	"github.com/rachelos/rungo/client/orm/internal/utils"
 )
 
 // raw sql string prepared statement

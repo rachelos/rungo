@@ -19,7 +19,7 @@ import (
 	"testing"
 	"time"
 
-	"gitee.com/rachel_os/rungo/server/web/context"
+	"github.com/rachelos/rungo/server/web/context"
 )
 
 type testInfo struct {
@@ -110,7 +110,7 @@ func init() {
 		matchTestInfo("/?:year/:month/mid/:day/?:hour", "/11/mid/10", map[string]string{":month": "11", ":day": "10"}),
 
 		// not match example
-		// https://gitee.com/rachel_os/rungo/issues/3865
+		// https://github.com/rachelos/rungo/issues/3865
 		notMatchTestInfo("/read_:id:int\\.htm", "/read_222htm"),
 		notMatchTestInfo("/read_:id:int\\.htm", "/read_222_htm"),
 		notMatchTestInfo("/read_:id:int\\.htm", " /read_262shtm"),

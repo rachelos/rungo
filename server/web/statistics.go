@@ -20,7 +20,7 @@ import (
 	"sync"
 	"time"
 
-	"gitee.com/rachel_os/rungo/core/utils"
+	"github.com/rachelos/rungo/core/utils"
 )
 
 // Statistics struct

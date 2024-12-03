@@ -15,7 +15,7 @@
 package cache
 
 import (
-	"gitee.com/rachel_os/rungo/core/berror"
+	"github.com/rachelos/rungo/core/berror"
 )
 
 var NilCacheAdapter = berror.DefineCode(4002001, moduleName, "NilCacheAdapter", `

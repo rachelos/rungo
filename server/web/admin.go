@@ -21,7 +21,7 @@ import (
 	"reflect"
 	"time"
 
-	"gitee.com/rachel_os/rungo/core/logs"
+	"github.com/rachelos/rungo/core/logs"
 )
 
 // BeeAdminApp is the default adminApp used by admin module.

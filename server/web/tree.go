@@ -19,8 +19,8 @@ import (
 	"regexp"
 	"strings"
 
-	"gitee.com/rachel_os/rungo/core/utils"
-	"gitee.com/rachel_os/rungo/server/web/context"
+	"github.com/rachelos/rungo/core/utils"
+	"github.com/rachelos/rungo/server/web/context"
 )
 
 var allowSuffixExt = []string{".json", ".xml", ".html"}

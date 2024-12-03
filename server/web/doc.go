@@ -6,7 +6,7 @@ It is used for rapid development of RESTful APIs, web apps and backend services 
 beego is inspired by Tornado, Sinatra and Flask with the added benefit of some Go-specific features such as interfaces and struct embedding.
 
 	package main
-	import "gitee.com/rachel_os/rungo"
+	import "github.com/rachelos/rungo"
 
 	func main() {
 	 beego.Run()

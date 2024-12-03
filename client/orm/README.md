@@ -1,6 +1,6 @@
 # beego orm
 
-[![Build Status](https://drone.io/gitee.com/rachel_os/rungo/status.png)](https://drone.io/gitee.com/rachel_os/rungo/latest)
+[![Build Status](https://drone.io/github.com/rachelos/rungo/status.png)](https://drone.io/github.com/rachelos/rungo/latest)
 
 A powerful orm framework for go.
 
@@ -27,7 +27,7 @@ more features please read the docs
 
 **Install:**
 
-	go get gitee.com/rachel_os/rungo/client/orm
+	go get github.com/rachelos/rungo/client/orm
 
 ## Changelog
 
@@ -45,7 +45,7 @@ package main
 
 import (
 	"fmt"
-	"gitee.com/rachel_os/rungo/client/orm"
+	"github.com/rachelos/rungo/client/orm"
 	_ "github.com/go-sql-driver/mysql" // import your used driver
 )
 

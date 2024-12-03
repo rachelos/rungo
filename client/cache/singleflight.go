@@ -20,7 +20,7 @@ import (
 
 	"golang.org/x/sync/singleflight"
 
-	"gitee.com/rachel_os/rungo/core/berror"
+	"github.com/rachelos/rungo/core/berror"
 )
 
 // SingleflightCache

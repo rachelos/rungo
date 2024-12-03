@@ -18,8 +18,8 @@ import (
 	"context"
 	"net/http"
 
-	"gitee.com/rachel_os/rungo/client/httplib"
-	"gitee.com/rachel_os/rungo/core/logs"
+	"github.com/rachelos/rungo/client/httplib"
+	"github.com/rachelos/rungo/core/logs"
 )
 
 const mockCtxKey = "beego-httplib-mock"

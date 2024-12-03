@@ -21,7 +21,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"gitee.com/rachel_os/rungo/server/web"
+	"github.com/rachelos/rungo/server/web"
 )
 
 func TestSessionProvider(t *testing.T) {

@@ -11,7 +11,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"gitee.com/rachel_os/rungo/core/admin"
+	"github.com/rachelos/rungo/core/admin"
 )
 
 type SampleDatabaseCheck struct{}

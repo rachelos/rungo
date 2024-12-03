@@ -37,8 +37,8 @@
 // Usage:
 // import(
 //
-//	_ "gitee.com/rachel_os/rungo/server/web/session/postgresql"
-//	"gitee.com/rachel_os/rungo/server/web/session"
+//	_ "github.com/rachelos/rungo/server/web/session/postgresql"
+//	"github.com/rachelos/rungo/server/web/session"
 //
 // )
 //
@@ -57,7 +57,7 @@ import (
 
 	_ "github.com/lib/pq"
 
-	"gitee.com/rachel_os/rungo/server/web/session"
+	"github.com/rachelos/rungo/server/web/session"
 )
 
 var postgresqlpder = &Provider{}

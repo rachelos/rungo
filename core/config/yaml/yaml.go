@@ -16,8 +16,8 @@
 // Usage:
 //
 //	import(
-//	 _ "gitee.com/rachel_os/rungo/core/config/yaml"
-//	   "gitee.com/rachel_os/rungo/core/config"
+//	 _ "github.com/rachelos/rungo/core/config/yaml"
+//	   "github.com/rachelos/rungo/core/config"
 //	)
 //
 //	cnf, err := config.NewConfig("yaml", "config.yaml")
@@ -32,8 +32,8 @@ import (
 
 	"gopkg.in/yaml.v3"
 
-	"gitee.com/rachel_os/rungo/core/config"
-	"gitee.com/rachel_os/rungo/core/logs"
+	"github.com/rachelos/rungo/core/config"
+	"github.com/rachelos/rungo/core/logs"
 )
 
 // Config is a yaml config parser and implements Config interface.

@@ -21,7 +21,7 @@ import (
 	"strconv"
 	"testing"
 
-	"gitee.com/rachel_os/rungo/server/web/context"
+	"github.com/rachelos/rungo/server/web/context"
 )
 
 const (

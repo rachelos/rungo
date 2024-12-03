@@ -18,12 +18,12 @@ import (
 	"context"
 	"fmt"
 
-	"gitee.com/rachel_os/rungo/client/orm/internal/utils"
+	"github.com/rachelos/rungo/client/orm/internal/utils"
 
-	"gitee.com/rachel_os/rungo/client/orm/internal/models"
+	"github.com/rachelos/rungo/client/orm/internal/models"
 
-	"gitee.com/rachel_os/rungo/client/orm/clauses/order_clause"
-	"gitee.com/rachel_os/rungo/client/orm/hints"
+	"github.com/rachelos/rungo/client/orm/clauses/order_clause"
+	"github.com/rachelos/rungo/client/orm/hints"
 )
 
 type colValue struct {

@@ -22,7 +22,7 @@ import (
 	"github.com/opentracing/opentracing-go"
 	"github.com/stretchr/testify/assert"
 
-	"gitee.com/rachel_os/rungo/server/web/context"
+	"github.com/rachelos/rungo/server/web/context"
 )
 
 func TestFilterChainBuilder_FilterChain(t *testing.T) {

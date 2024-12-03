@@ -20,7 +20,7 @@ import (
 	"fmt"
 	"html/template"
 
-	"gitee.com/rachel_os/rungo/core/admin"
+	"github.com/rachelos/rungo/core/admin"
 )
 
 type listTaskCommand struct{}

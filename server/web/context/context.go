@@ -15,7 +15,7 @@
 // Package context provide the context utils
 // Usage:
 //
-//	import "gitee.com/rachel_os/rungo/server/web/context"
+//	import "github.com/rachelos/rungo/server/web/context"
 //
 //	ctx := context.Context{Request:req,ResponseWriter:rw}
 package context
@@ -40,8 +40,8 @@ import (
 	"google.golang.org/protobuf/proto"
 	"gopkg.in/yaml.v3"
 
-	"gitee.com/rachel_os/rungo/core/utils"
-	"gitee.com/rachel_os/rungo/server/web/session"
+	"github.com/rachelos/rungo/core/utils"
+	"github.com/rachelos/rungo/server/web/session"
 )
 
 // Commonly used mime-types

@@ -21,7 +21,7 @@ import (
 
 	_ "github.com/mattn/go-sqlite3"
 
-	"gitee.com/rachel_os/rungo/client/orm"
+	"github.com/rachelos/rungo/client/orm"
 )
 
 func init() {

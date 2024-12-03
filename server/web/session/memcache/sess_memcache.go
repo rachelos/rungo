@@ -21,8 +21,8 @@
 // Usage:
 // import(
 //
-//	_ "gitee.com/rachel_os/rungo/server/web/session/memcache"
-//	"gitee.com/rachel_os/rungo/server/web/session"
+//	_ "github.com/rachelos/rungo/server/web/session/memcache"
+//	"github.com/rachelos/rungo/server/web/session"
 //
 // )
 //
@@ -40,7 +40,7 @@ import (
 
 	"github.com/bradfitz/gomemcache/memcache"
 
-	"gitee.com/rachel_os/rungo/server/web/session"
+	"github.com/rachelos/rungo/server/web/session"
 )
 
 var (

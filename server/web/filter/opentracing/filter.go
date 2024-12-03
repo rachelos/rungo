@@ -21,8 +21,8 @@ import (
 	logKit "github.com/go-kit/log"
 	"github.com/opentracing/opentracing-go"
 
-	"gitee.com/rachel_os/rungo/server/web"
-	beegoCtx "gitee.com/rachel_os/rungo/server/web/context"
+	"github.com/rachelos/rungo/server/web"
+	beegoCtx "github.com/rachelos/rungo/server/web/context"
 )
 
 // FilterChainBuilder provides an extension point that we can support more configurations if necessary

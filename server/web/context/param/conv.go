@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"reflect"
 
-	"gitee.com/rachel_os/rungo/core/logs"
-	beecontext "gitee.com/rachel_os/rungo/server/web/context"
+	"github.com/rachelos/rungo/core/logs"
+	beecontext "github.com/rachelos/rungo/server/web/context"
 )
 
 // ConvertParams converts http method params to values that will be passed to the method controller as arguments

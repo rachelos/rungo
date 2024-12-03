@@ -15,7 +15,7 @@
 package testing
 
 import (
-	"gitee.com/rachel_os/rungo/client/httplib"
+	"github.com/rachelos/rungo/client/httplib"
 )
 
 var (

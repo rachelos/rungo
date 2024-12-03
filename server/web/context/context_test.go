@@ -19,7 +19,7 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"gitee.com/rachel_os/rungo/server/web/session"
+	"github.com/rachelos/rungo/server/web/session"
 )
 
 func TestXsrfReset_01(t *testing.T) {

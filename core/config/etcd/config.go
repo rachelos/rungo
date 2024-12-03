@@ -26,8 +26,8 @@ import (
 	clientv3 "go.etcd.io/etcd/client/v3"
 	"google.golang.org/grpc"
 
-	"gitee.com/rachel_os/rungo/core/config"
-	"gitee.com/rachel_os/rungo/core/logs"
+	"github.com/rachelos/rungo/core/config"
+	"github.com/rachelos/rungo/core/logs"
 )
 
 type EtcdConfiger struct {

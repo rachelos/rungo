@@ -16,8 +16,8 @@
 // Simple Usage:
 //
 //	import(
-//		"gitee.com/rachel_os/rungo"
-//		"gitee.com/rachel_os/rungo/server/web/filter/authz"
+//		"github.com/rachelos/rungo"
+//		"github.com/rachelos/rungo/server/web/filter/authz"
 //		"github.com/casbin/casbin"
 //	)
 //
@@ -44,8 +44,8 @@ import (
 
 	"github.com/casbin/casbin"
 
-	"gitee.com/rachel_os/rungo/server/web"
-	"gitee.com/rachel_os/rungo/server/web/context"
+	"github.com/rachelos/rungo/server/web"
+	"github.com/rachelos/rungo/server/web/context"
 )
 
 // NewAuthorizer returns the authorizer.
