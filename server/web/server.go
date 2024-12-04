@@ -36,14 +36,14 @@ import (
 	"github.com/rachelos/rungo/server/web/grace"
 )
 
-// BeeApp is an application instance
+// RunApp is an application instance
 // If you are using single server, you could use this
 // But if you need multiple servers, do not use this
-var BeeApp *HttpServer
+var RunApp *HttpServer
 
 func init() {
 	// create rungo application
-	BeeApp = NewHttpSever()
+	RunApp = NewHttpSever()
 }
 
 // HttpServer defines rungo application with a new PatternServeMux.
@@ -310,10 +310,10 @@ func Router(rootpath string, c ControllerInterface, mappingMethods ...string) *H
 }
 
 func RouterWithOpts(rootpath string, c ControllerInterface, opts ...ControllerOption) *HttpServer {
-	return BeeApp.RouterWithOpts(rootpath, c, opts...)
+	return RunApp.RouterWithOpts(rootpath, c, opts...)
 }
 
-// Router adds a patterned controller handler to BeeApp.
+// Router adds a patterned controller handler to RunApp.
 // it's an alias method of HttpServer.Router.
 // usage:
 //
@@ -341,7 +341,7 @@ func (app *HttpServer) RouterWithOpts(rootPath string, c ControllerInterface, op
 
 // UnregisterFixedRoute see HttpServer.UnregisterFixedRoute
 func UnregisterFixedRoute(fixedRoute string, method string) *HttpServer {
-	return BeeApp.UnregisterFixedRoute(fixedRoute, method)
+	return RunApp.UnregisterFixedRoute(fixedRoute, method)
 }
 
 // UnregisterFixedRoute unregisters the route with the specified fixedRoute. It is particularly useful
@@ -425,7 +425,7 @@ func findAndRemoveSingleTree(entryPointTree *Tree) {
 
 // Include see HttpServer.Include
 func Include(cList ...ControllerInterface) *HttpServer {
-	return BeeApp.Include(cList...)
+	return RunApp.Include(cList...)
 }
 
 // Include will generate router file in the router/xxx.go from the controller's comments
@@ -465,10 +465,10 @@ func (app *HttpServer) Include(cList ...ControllerInterface) *HttpServer {
 
 // RESTRouter see HttpServer.RESTRouter
 func RESTRouter(rootpath string, c ControllerInterface) *HttpServer {
-	return BeeApp.RESTRouter(rootpath, c)
+	return RunApp.RESTRouter(rootpath, c)
 }
 
-// RESTRouter adds a restful controller handler to BeeApp.
+// RESTRouter adds a restful controller handler to RunApp.
 // its' controller implements rungo.ControllerInterface and
 // defines a param "pattern/:objectId" to visit each resource.
 func (app *HttpServer) RESTRouter(rootpath string, c ControllerInterface) *HttpServer {
@@ -479,10 +479,10 @@ func (app *HttpServer) RESTRouter(rootpath string, c ControllerInterface) *HttpS
 
 // AutoRouter see HttpServer.AutoRouter
 func AutoRouter(c ControllerInterface) *HttpServer {
-	return BeeApp.AutoRouter(c)
+	return RunApp.AutoRouter(c)
 }
 
-// AutoRouter adds defined controller handler to BeeApp.
+// AutoRouter adds defined controller handler to RunApp.
 // it's same to HttpServer.AutoRouter.
 // if rungo.AddAuto(&MainController{}) and MainController has methods List and Page,
 // visit the url /main/list to exec List function or /main/page to exec Page function.
@@ -493,10 +493,10 @@ func (app *HttpServer) AutoRouter(c ControllerInterface) *HttpServer {
 
 // AutoPrefix see HttpServer.AutoPrefix
 func AutoPrefix(prefix string, c ControllerInterface) *HttpServer {
-	return BeeApp.AutoPrefix(prefix, c)
+	return RunApp.AutoPrefix(prefix, c)
 }
 
-// AutoPrefix adds controller handler to BeeApp with prefix.
+// AutoPrefix adds controller handler to RunApp with prefix.
 // it's same to HttpServer.AutoRouterWithPrefix.
 // if rungo.AutoPrefix("/admin",&MainController{}) and MainController has methods List and Page,
 // visit the url /admin/main/list to exec List function or /admin/main/page to exec Page function.
@@ -507,7 +507,7 @@ func (app *HttpServer) AutoPrefix(prefix string, c ControllerInterface) *HttpSer
 
 // CtrlGet see HttpServer.CtrlGet
 func CtrlGet(rootpath string, f interface{}) {
-	BeeApp.CtrlGet(rootpath, f)
+	RunApp.CtrlGet(rootpath, f)
 }
 
 // CtrlGet used to register router for CtrlGet method
@@ -528,7 +528,7 @@ func (app *HttpServer) CtrlGet(rootpath string, f interface{}) *HttpServer {
 
 // CtrlPost see HttpServer.CtrlGet
 func CtrlPost(rootpath string, f interface{}) {
-	BeeApp.CtrlPost(rootpath, f)
+	RunApp.CtrlPost(rootpath, f)
 }
 
 // CtrlPost used to register router for CtrlPost method
@@ -549,7 +549,7 @@ func (app *HttpServer) CtrlPost(rootpath string, f interface{}) *HttpServer {
 
 // CtrlHead see HttpServer.CtrlHead
 func CtrlHead(rootpath string, f interface{}) {
-	BeeApp.CtrlHead(rootpath, f)
+	RunApp.CtrlHead(rootpath, f)
 }
 
 // CtrlHead used to register router for CtrlHead method
@@ -570,7 +570,7 @@ func (app *HttpServer) CtrlHead(rootpath string, f interface{}) *HttpServer {
 
 // CtrlPut see HttpServer.CtrlPut
 func CtrlPut(rootpath string, f interface{}) {
-	BeeApp.CtrlPut(rootpath, f)
+	RunApp.CtrlPut(rootpath, f)
 }
 
 // CtrlPut used to register router for CtrlPut method
@@ -591,7 +591,7 @@ func (app *HttpServer) CtrlPut(rootpath string, f interface{}) *HttpServer {
 
 // CtrlPatch see HttpServer.CtrlPatch
 func CtrlPatch(rootpath string, f interface{}) {
-	BeeApp.CtrlPatch(rootpath, f)
+	RunApp.CtrlPatch(rootpath, f)
 }
 
 // CtrlPatch used to register router for CtrlPatch method
@@ -612,7 +612,7 @@ func (app *HttpServer) CtrlPatch(rootpath string, f interface{}) *HttpServer {
 
 // CtrlDelete see HttpServer.CtrlDelete
 func CtrlDelete(rootpath string, f interface{}) {
-	BeeApp.CtrlDelete(rootpath, f)
+	RunApp.CtrlDelete(rootpath, f)
 }
 
 // CtrlDelete used to register router for CtrlDelete method
@@ -633,7 +633,7 @@ func (app *HttpServer) CtrlDelete(rootpath string, f interface{}) *HttpServer {
 
 // CtrlOptions see HttpServer.CtrlOptions
 func CtrlOptions(rootpath string, f interface{}) {
-	BeeApp.CtrlOptions(rootpath, f)
+	RunApp.CtrlOptions(rootpath, f)
 }
 
 // CtrlOptions used to register router for CtrlOptions method
@@ -654,7 +654,7 @@ func (app *HttpServer) CtrlOptions(rootpath string, f interface{}) *HttpServer {
 
 // CtrlAny see HttpServer.CtrlAny
 func CtrlAny(rootpath string, f interface{}) {
-	BeeApp.CtrlAny(rootpath, f)
+	RunApp.CtrlAny(rootpath, f)
 }
 
 // CtrlAny used to register router for CtrlAny method
@@ -675,7 +675,7 @@ func (app *HttpServer) CtrlAny(rootpath string, f interface{}) *HttpServer {
 
 // Get see HttpServer.Get
 func Get(rootpath string, f HandleFunc) *HttpServer {
-	return BeeApp.Get(rootpath, f)
+	return RunApp.Get(rootpath, f)
 }
 
 // Get used to register router for Get method
@@ -691,7 +691,7 @@ func (app *HttpServer) Get(rootpath string, f HandleFunc) *HttpServer {
 
 // Post see HttpServer.Post
 func Post(rootpath string, f HandleFunc) *HttpServer {
-	return BeeApp.Post(rootpath, f)
+	return RunApp.Post(rootpath, f)
 }
 
 // Post used to register router for Post method
@@ -707,7 +707,7 @@ func (app *HttpServer) Post(rootpath string, f HandleFunc) *HttpServer {
 
 // Delete see HttpServer.Delete
 func Delete(rootpath string, f HandleFunc) *HttpServer {
-	return BeeApp.Delete(rootpath, f)
+	return RunApp.Delete(rootpath, f)
 }
 
 // Delete used to register router for Delete method
@@ -723,7 +723,7 @@ func (app *HttpServer) Delete(rootpath string, f HandleFunc) *HttpServer {
 
 // Put see HttpServer.Put
 func Put(rootpath string, f HandleFunc) *HttpServer {
-	return BeeApp.Put(rootpath, f)
+	return RunApp.Put(rootpath, f)
 }
 
 // Put used to register router for Put method
@@ -739,7 +739,7 @@ func (app *HttpServer) Put(rootpath string, f HandleFunc) *HttpServer {
 
 // Head see HttpServer.Head
 func Head(rootpath string, f HandleFunc) *HttpServer {
-	return BeeApp.Head(rootpath, f)
+	return RunApp.Head(rootpath, f)
 }
 
 // Head used to register router for Head method
@@ -755,8 +755,8 @@ func (app *HttpServer) Head(rootpath string, f HandleFunc) *HttpServer {
 
 // Options see HttpServer.Options
 func Options(rootpath string, f HandleFunc) *HttpServer {
-	BeeApp.Handlers.Options(rootpath, f)
-	return BeeApp
+	RunApp.Handlers.Options(rootpath, f)
+	return RunApp
 }
 
 // Options used to register router for Options method
@@ -772,7 +772,7 @@ func (app *HttpServer) Options(rootpath string, f HandleFunc) *HttpServer {
 
 // Patch see HttpServer.Patch
 func Patch(rootpath string, f HandleFunc) *HttpServer {
-	return BeeApp.Patch(rootpath, f)
+	return RunApp.Patch(rootpath, f)
 }
 
 // Patch used to register router for Patch method
@@ -788,7 +788,7 @@ func (app *HttpServer) Patch(rootpath string, f HandleFunc) *HttpServer {
 
 // Any see HttpServer.Any
 func Any(rootpath string, f HandleFunc) *HttpServer {
-	return BeeApp.Any(rootpath, f)
+	return RunApp.Any(rootpath, f)
 }
 
 // Any used to register router for all methods
@@ -804,7 +804,7 @@ func (app *HttpServer) Any(rootpath string, f HandleFunc) *HttpServer {
 
 // Handler see HttpServer.Handler
 func Handler(rootpath string, h http.Handler, options ...interface{}) *HttpServer {
-	return BeeApp.Handler(rootpath, h, options...)
+	return RunApp.Handler(rootpath, h, options...)
 }
 
 // Handler used to register a Handler router
@@ -820,7 +820,7 @@ func (app *HttpServer) Handler(rootpath string, h http.Handler, options ...inter
 
 // InsertFilter see HttpServer.InsertFilter
 func InsertFilter(pattern string, pos int, filter FilterFunc, opts ...FilterOpt) *HttpServer {
-	return BeeApp.InsertFilter(pattern, pos, filter, opts...)
+	return RunApp.InsertFilter(pattern, pos, filter, opts...)
 }
 
 // InsertFilter adds a FilterFunc with pattern condition and action constant.
@@ -834,7 +834,7 @@ func (app *HttpServer) InsertFilter(pattern string, pos int, filter FilterFunc, 
 
 // InsertFilterChain see HttpServer.InsertFilterChain
 func InsertFilterChain(pattern string, filterChain FilterChain, opts ...FilterOpt) *HttpServer {
-	return BeeApp.InsertFilterChain(pattern, filterChain, opts...)
+	return RunApp.InsertFilterChain(pattern, filterChain, opts...)
 }
 
 // InsertFilterChain adds a FilterFunc built by filterChain.

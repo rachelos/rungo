@@ -49,15 +49,15 @@ func AddAPPStartHook(hf ...hookfunc) {
 // rungo.Run("127.0.0.1:8089")
 func Run(params ...string) {
 	if len(params) > 0 && params[0] != "" {
-		BeeApp.Run(params[0])
+		RunApp.Run(params[0])
 	} else {
-		BeeApp.Run("")
+		RunApp.Run("")
 	}
 }
 
 // RunWithMiddleWares Run rungo application with middlewares.
 func RunWithMiddleWares(addr string, mws ...MiddleWare) {
-	BeeApp.Run(addr, mws...)
+	RunApp.Run(addr, mws...)
 }
 
 var initHttpOnce sync.Once

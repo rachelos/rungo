@@ -366,7 +366,7 @@ func SetTemplateFSFunc(fnt templateFSFunc) {
 // SetViewsPath sets view directory path in rungo application.
 func SetViewsPath(path string) *HttpServer {
 	BConfig.WebConfig.ViewsPath = path
-	return BeeApp
+	return RunApp
 }
 
 // SetStaticPath sets static directory path and proper url pattern in rungo application.
@@ -379,7 +379,7 @@ func SetStaticPath(url string, path string) *HttpServer {
 		url = strings.TrimRight(url, "/")
 	}
 	BConfig.WebConfig.StaticDir[url] = path
-	return BeeApp
+	return RunApp
 }
 
 // DelStaticPath removes the static folder setting in this url pattern in rungo application.
@@ -391,12 +391,12 @@ func DelStaticPath(url string) *HttpServer {
 		url = strings.TrimRight(url, "/")
 	}
 	delete(BConfig.WebConfig.StaticDir, url)
-	return BeeApp
+	return RunApp
 }
 
 // AddTemplateEngine add a new templatePreProcessor which support extension
 func AddTemplateEngine(extension string, fn templatePreProcessor) *HttpServer {
 	AddTemplateExt(extension)
 	beeTemplateEngines[extension] = fn
-	return BeeApp
+	return RunApp
 }

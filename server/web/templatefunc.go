@@ -244,7 +244,7 @@ func Htmlunquote(text string) string {
 //		/login?next=/
 //		/user/John%20Doe
 func URLFor(endpoint string, values ...interface{}) string {
-	return BeeApp.Handlers.URLFor(endpoint, values...)
+	return RunApp.Handlers.URLFor(endpoint, values...)
 }
 
 // AssetsJs returns script tag with src string.

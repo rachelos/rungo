@@ -395,7 +395,7 @@ func ErrorHandler(code string, h http.HandlerFunc) *HttpServer {
 		handler:   h,
 		method:    code,
 	}
-	return BeeApp
+	return RunApp
 }
 
 // ErrorController registers ControllerInterface to each http err code string.
@@ -417,7 +417,7 @@ func ErrorController(c ControllerInterface) *HttpServer {
 			}
 		}
 	}
-	return BeeApp
+	return RunApp
 }
 
 // Exception Write HttpStatus with errCode and Exec error handler if exist.

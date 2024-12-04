@@ -44,8 +44,8 @@ func TestControllerRegisterInsertFilterChain(t *testing.T) {
 	r, _ := http.NewRequest("GET", "/chain/user", nil)
 	w := httptest.NewRecorder()
 
-	BeeApp.Handlers.Init()
-	BeeApp.Handlers.ServeHTTP(w, r)
+	RunApp.Handlers.Init()
+	RunApp.Handlers.ServeHTTP(w, r)
 
 	assert.Equal(t, "filter-chain", w.Header().Get("filter"))
 }
@@ -70,8 +70,8 @@ func TestControllerRegister_InsertFilterChain_Order(t *testing.T) {
 	r, _ := http.NewRequest("GET", "/abc", nil)
 	w := httptest.NewRecorder()
 
-	BeeApp.Handlers.Init()
-	BeeApp.Handlers.ServeHTTP(w, r)
+	RunApp.Handlers.Init()
+	RunApp.Handlers.ServeHTTP(w, r)
 	first := w.Header().Get("first")
 	second := w.Header().Get("second")
 

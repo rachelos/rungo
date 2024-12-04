@@ -79,7 +79,7 @@ func (builder *FilterChainBuilder) operationName(ctx *rungoCtx.Context) string {
 	operationName := ctx.Input.URL()
 	// it means that there is not any span, so we create a span as the root span.
 	// TODO, if we support multiple servers, this need to be changed
-	route, found := web.BeeApp.Handlers.FindRouter(ctx)
+	route, found := web.RunApp.Handlers.FindRouter(ctx)
 	if found {
 		operationName = ctx.Input.Method() + "#" + route.GetPattern()
 	}

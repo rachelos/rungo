@@ -227,7 +227,7 @@ func (a *adminController) ListConf() {
 		tmpl.Execute(rw, data)
 
 	case "router":
-		content := BeeApp.PrintTree()
+		content := RunApp.PrintTree()
 		content["Fields"] = []string{
 			"Router Pattern",
 			"Methods",
@@ -244,7 +244,7 @@ func (a *adminController) ListConf() {
 			},
 		}
 
-		filterTypeData := BeeApp.reportFilter()
+		filterTypeData := RunApp.reportFilter()
 
 		filterTypes := make([]string, 0, len(filterTypeData))
 		for k := range filterTypeData {
@@ -287,7 +287,7 @@ func buildHealthCheckResponseList(healthCheckResults *[][]string) []map[string]i
 }
 
 // PrintTree print all routers
-// Deprecated using BeeApp directly
+// Deprecated using RunApp directly
 func PrintTree() M {
-	return BeeApp.PrintTree()
+	return RunApp.PrintTree()
 }

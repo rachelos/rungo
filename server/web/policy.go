@@ -73,7 +73,7 @@ func (p *ControllerRegister) addToPolicy(method, pattern string, r ...PolicyFunc
 
 // Policy Register new policy in rungo
 func Policy(pattern, method string, policy ...PolicyFunc) {
-	BeeApp.Handlers.addToPolicy(method, pattern, policy...)
+	RunApp.Handlers.addToPolicy(method, pattern, policy...)
 }
 
 // Find policies and execute if were found
