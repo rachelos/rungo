@@ -1,7 +1,4 @@
 module github.com/rachelos/rungo
-
-go 1.22.9
-
 require (
 	github.com/beego/x2j v0.0.0-20131220205130-a0352aadc542
 	github.com/bits-and-blooms/bloom/v3 v3.7.0
