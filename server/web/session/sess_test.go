@@ -1,4 +1,4 @@
-// Copyright 2014 beego Author. All Rights Reserved.
+// Copyright 2014 rungo Author. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -101,7 +101,7 @@ func TestParseConfig(t *testing.T) {
 		t.Fatal("parseconfig get gclifetime error")
 	}
 
-	cc := `{"cookieName":"gosessionid","enableSetCookie":false,"gclifetime":3600,"ProviderConfig":"{\"cookieName\":\"gosessionid\",\"securityKey\":\"beegocookiehashkey\"}"}`
+	cc := `{"cookieName":"gosessionid","enableSetCookie":false,"gclifetime":3600,"ProviderConfig":"{\"cookieName\":\"gosessionid\",\"securityKey\":\"rungocookiehashkey\"}"}`
 	cf2 := new(ManagerConfig)
 	cf2.EnableSetCookie = true
 	err = json.Unmarshal([]byte(cc), cf2)
@@ -125,7 +125,7 @@ func TestParseConfig(t *testing.T) {
 	if cconfig.CookieName != "gosessionid" {
 		t.Fatal("ProviderConfig get cookieName error")
 	}
-	if cconfig.SecurityKey != "beegocookiehashkey" {
+	if cconfig.SecurityKey != "rungocookiehashkey" {
 		t.Fatal("ProviderConfig get securityKey error")
 	}
 }

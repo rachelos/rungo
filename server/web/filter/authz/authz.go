@@ -1,4 +1,4 @@
-// Copyright 2014 beego Author. All Rights Reserved.
+// Copyright 2014 rungo Author. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -23,8 +23,8 @@
 //
 //	func main(){
 //		// mediate the access for every request
-//		beego.InsertFilter("*", beego.BeforeRouter, authz.NewAuthorizer(casbin.NewEnforcer("authz_model.conf", "authz_policy.csv")))
-//		beego.Run()
+//		rungo.InsertFilter("*", rungo.BeforeRouter, authz.NewAuthorizer(casbin.NewEnforcer("authz_model.conf", "authz_policy.csv")))
+//		rungo.Run()
 //	}
 //
 // Advanced Usage:
@@ -34,8 +34,8 @@
 //		e.AddRoleForUser("alice", "admin")
 //		e.AddPolicy(...)
 //
-//		beego.InsertFilter("*", beego.BeforeRouter, authz.NewAuthorizer(e))
-//		beego.Run()
+//		rungo.InsertFilter("*", rungo.BeforeRouter, authz.NewAuthorizer(e))
+//		rungo.Run()
 //	}
 package authz
 

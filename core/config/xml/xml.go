@@ -1,4 +1,4 @@
-// Copyright 2014 beego Author. All Rights Reserved.
+// Copyright 2014 rungo Author. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,9 +14,9 @@
 
 // Package xml for config provider.
 //
-// depend on github.com/beego/x2j.
+// depend on github.com/rachelos/rungo/x2j.
 //
-// go install github.com/beego/x2j.
+// go install github.com/rachelos/rungo/x2j.
 //
 // Usage:
 //
@@ -39,7 +39,7 @@ import (
 
 	"github.com/mitchellh/mapstructure"
 
-	"github.com/beego/x2j"
+	"github.com/rachelos/rungo/x2j"
 
 	"github.com/rachelos/rungo/core/config"
 	"github.com/rachelos/rungo/core/logs"

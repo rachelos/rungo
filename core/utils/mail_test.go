@@ -1,4 +1,4 @@
-// Copyright 2014 beego Author. All Rights Reserved.
+// Copyright 2014 rungo Author. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -33,9 +33,9 @@ func TestMail(t *testing.T) {
 	}
 	mail.To = []string{"xiemengjun@gmail.com"}
 	mail.From = "astaxie@gmail.com"
-	mail.Subject = "hi, just from beego!"
+	mail.Subject = "hi, just from rungo!"
 	mail.Text = "Text Body is, of course, supported!"
 	mail.HTML = "<h1>Fancy Html is supported, too!</h1>"
-	mail.AttachFile("/Users/astaxie/github/beego/beego.go")
+	mail.AttachFile("/Users/astaxie/github/rungo/rungo.go")
 	mail.Send()
 }

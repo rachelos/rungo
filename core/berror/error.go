@@ -1,4 +1,4 @@
-// Copyright 2020 beego
+// Copyright 2020 rungo
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -46,7 +46,7 @@ func Wrapf(err error, c Code, format string, a ...interface{}) error {
 
 // FromError is very simple. It just parse error msg and check whether code has been register
 // if code not being register, return unknown
-// if err.Error() is not valid beego error code, return unknown
+// if err.Error() is not valid rungo error code, return unknown
 func FromError(err error) (Code, bool) {
 	msg := err.Error()
 	codeSeg := strings.SplitN(msg, ",", 2)

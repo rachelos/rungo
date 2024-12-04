@@ -1,4 +1,4 @@
-// Copyright 2021 beego
+// Copyright 2021 rungo
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -26,7 +26,7 @@ import (
 	"github.com/rachelos/rungo/client/httplib"
 )
 
-type CustomSpanFunc func(span trace.Span, ctx context.Context, req *httplib.BeegoHTTPRequest, resp *http.Response, err error)
+type CustomSpanFunc func(span trace.Span, ctx context.Context, req *httplib.RungoHTTPRequest, resp *http.Response, err error)
 
 type OtelFilterChainBuilder struct {
 	// TagURL true will tag span with url
@@ -43,11 +43,11 @@ func NewOpenTelemetryFilter(tagURL bool, spanFunc CustomSpanFunc) *OtelFilterCha
 }
 
 func (builder *OtelFilterChainBuilder) FilterChain(next httplib.Filter) httplib.Filter {
-	return func(ctx context.Context, req *httplib.BeegoHTTPRequest) (*http.Response, error) {
+	return func(ctx context.Context, req *httplib.RungoHTTPRequest) (*http.Response, error) {
 		method := req.GetRequest().Method
 
 		operationName := method + "#" + req.GetRequest().URL.Path
-		spanCtx, span := otel.Tracer("beego").Start(ctx, operationName)
+		spanCtx, span := otel.Tracer("rungo").Start(ctx, operationName)
 		defer span.End()
 
 		otel.GetTextMapPropagator().Inject(spanCtx, propagation.HeaderCarrier(req.GetRequest().Header))
@@ -62,7 +62,7 @@ func (builder *OtelFilterChainBuilder) FilterChain(next httplib.Filter) httplib.
 
 		span.SetAttributes(attribute.String("http.scheme", req.GetRequest().URL.Scheme))
 		span.SetAttributes(attribute.String("span.kind", "client"))
-		span.SetAttributes(attribute.String("component", "beego"))
+		span.SetAttributes(attribute.String("component", "rungo"))
 
 		if builder.tagURL {
 			span.SetAttributes(attribute.String("http.url", req.GetRequest().URL.String()))

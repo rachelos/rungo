@@ -10,7 +10,7 @@ you can use Get to crawl data.
 
 	import "github.com/rachelos/rungo/client/httplib"
 
-	str, err := httplib.Get("http://beego.vip/").String()
+	str, err := httplib.Get("http://rungo.vip/").String()
 	if err != nil {
         	// error
 	}
@@ -20,7 +20,7 @@ you can use Get to crawl data.
 
 POST data to remote url
 
-	req := httplib.Post("http://beego.vip/")
+	req := httplib.Post("http://rungo.vip/")
 	req.Param("username","astaxie")
 	req.Param("password","123456")
 	str, err := req.String()
@@ -38,20 +38,20 @@ The default timeout is `60` seconds, function prototype:
 Example:
 
 	// GET
-	httplib.Get("http://beego.vip/").SetTimeout(100 * time.Second, 30 * time.Second)
+	httplib.Get("http://rungo.vip/").SetTimeout(100 * time.Second, 30 * time.Second)
 
 	// POST
-	httplib.Post("http://beego.vip/").SetTimeout(100 * time.Second, 30 * time.Second)
+	httplib.Post("http://rungo.vip/").SetTimeout(100 * time.Second, 30 * time.Second)
 
 ## Debug
 
 If you want to debug the request info, set the debug on
 
-	httplib.Get("http://beego.vip/").Debug(true)
+	httplib.Get("http://rungo.vip/").Debug(true)
 
 ## Set HTTP Basic Auth
 
-	str, err := Get("http://beego.vip/").SetBasicAuth("user", "passwd").String()
+	str, err := Get("http://rungo.vip/").SetBasicAuth("user", "passwd").String()
 	if err != nil {
         	// error
 	}
@@ -69,7 +69,7 @@ More info about the `tls.Config` please visit http://golang.org/pkg/crypto/tls/#
 
 some servers need to specify the protocol version of HTTP
 
-	httplib.Get("http://beego.vip/").SetProtocolVersion("HTTP/1.1")
+	httplib.Get("http://rungo.vip/").SetProtocolVersion("HTTP/1.1")
 
 ## Set Cookie
 
@@ -78,13 +78,13 @@ some http request need setcookie. So set it like this:
 	cookie := &http.Cookie{}
 	cookie.Name = "username"
 	cookie.Value  = "astaxie"
-	httplib.Get("http://beego.vip/").SetCookie(cookie)
+	httplib.Get("http://rungo.vip/").SetCookie(cookie)
 
 ## Upload file
 
 httplib support mutil file upload, use `req.PostFile()`
 
-	req := httplib.Post("http://beego.vip/")
+	req := httplib.Post("http://rungo.vip/")
 	req.Param("username","astaxie")
 	req.PostFile("uploadfile1", "httplib.pdf")
 	str, err := req.String()

@@ -1,4 +1,4 @@
-// Copyright 2014 beego Author. All Rights Reserved.
+// Copyright 2014 rungo Author. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -111,7 +111,7 @@ func (w *fileLogWriter) SetFormatter(f LogFormatter) {
 // jsonConfig like:
 //
 //	{
-//	"filename":"logs/beego.log",
+//	"filename":"logs/rungo.log",
 //	"maxLines":10000,
 //	"maxsize":1024,
 //	"daily":true,

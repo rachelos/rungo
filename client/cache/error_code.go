@@ -1,4 +1,4 @@
-// Copyright 2021 beego
+// Copyright 2021 rungo
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -24,7 +24,7 @@ A cache adapter is an instance of Cache interface.
 `)
 
 var DuplicateAdapter = berror.DefineCode(4002002, moduleName, "DuplicateAdapter", `
-You register two adapter with same name. In beego cache module, one name one adapter.
+You register two adapter with same name. In rungo cache module, one name one adapter.
 Once you got this error, please check the error stack, search adapter 
 `)
 
@@ -58,9 +58,9 @@ This parameter must be a integer, and please check your input.
 `)
 
 var CreateFileCacheDirFailed = berror.DefineCode(4002009, moduleName, "CreateFileCacheDirFailed", `
-Beego failed to create file cache directory. There are two cases:
+rungo failed to create file cache directory. There are two cases:
 1. You pass invalid CachePath parameter. Please check your input.
-2. Beego doesn't have the permission to create this directory. Please check your file mode.
+2. rungo doesn't have the permission to create this directory. Please check your file mode.
 `)
 
 var InvalidFileCachePath = berror.DefineCode(4002010, moduleName, "InvalidFilePath", `
@@ -68,9 +68,9 @@ The file path of FileCache is invalid. Please correct the config.
 `)
 
 var ReadFileCacheContentFailed = berror.DefineCode(4002011, moduleName, "ReadFileCacheContentFailed", `
-Usually you won't got this error. It means that Beego cannot read the data from the file.
+Usually you won't got this error. It means that rungo cannot read the data from the file.
 You need to check whether the file exist. Sometimes it may be deleted by other processes.
-If the file exists, please check the permission that Beego is able to read data from the file.
+If the file exists, please check the permission that rungo is able to read data from the file.
 `)
 
 var InvalidGobEncodedData = berror.DefineCode(4002012, moduleName, "InvalidEncodedData", `
@@ -79,7 +79,7 @@ Please confirm that the data is encoded by GOB correctly.
 `)
 
 var GobEncodeDataFailed = berror.DefineCode(4002013, moduleName, "GobEncodeDataFailed", `
-Beego could not encode the data to GOB byte array. In general, the data type is invalid. 
+rungo could not encode the data to GOB byte array. In general, the data type is invalid. 
 For example, GOB doesn't support function type.
 Basic types, string, structure, structure pointer are supported. 
 `)
@@ -143,24 +143,24 @@ Please check the log to make sure the StoreFunc works for the specific key and v
 `)
 
 var DeleteFileCacheItemFailed = berror.DefineCode(5002001, moduleName, "DeleteFileCacheItemFailed", `
-Beego try to delete file cache item failed. 
-Please check whether Beego generated file correctly. 
+rungo try to delete file cache item failed. 
+Please check whether rungo generated file correctly. 
 And then confirm whether this file is already deleted by other processes or other people.
 `)
 
 var MemCacheCurdFailed = berror.DefineCode(5002002, moduleName, "MemCacheError", `
 When you want to get, put, delete key-value from remote memcache servers, you may get error:
-1. You pass invalid servers address, so Beego could not connect to remote server;
+1. You pass invalid servers address, so rungo could not connect to remote server;
 2. The servers address is correct, but there is some net issue. Typically there is some firewalls between application and memcache server;
 3. Key is invalid. The key's length should be less than 250 and must not contains special characters;
 4. The response from memcache server is invalid;
 `)
 
 var RedisCacheCurdFailed = berror.DefineCode(5002003, moduleName, "RedisCacheCurdFailed", `
-When Beego uses client to send request to redis server, it failed.
+When rungo uses client to send request to redis server, it failed.
 1. The server addresses is invalid;
 2. Network issue, firewall issue or network is unstable;
-3. Client failed to manage connection. In extreme cases, Beego's redis client didn't maintain connections correctly, for example, Beego try to send request via closed connection;
+3. Client failed to manage connection. In extreme cases, rungo's redis client didn't maintain connections correctly, for example, rungo try to send request via closed connection;
 4. The request are huge and redis server spent too much time to process it, and client is timeout;
 
 In general, if you always got this error whatever you do, in most cases, it was caused by network issue. 
@@ -173,7 +173,7 @@ You could simply uses ping, telnet or write some simple tests to test network.
 `)
 
 var DialFailed = berror.DefineCode(5002005, moduleName, "DialFailed", `
-When Beego try to dial to remote servers, it failed. Please check your connection info and network state, server state.
+When rungo try to dial to remote servers, it failed. Please check your connection info and network state, server state.
 `)
 
 var SsdbCacheCurdFailed = berror.DefineCode(5002006, moduleName, "SsdbCacheCurdFailed", `
@@ -190,7 +190,7 @@ Usually it indicates something wrong on server side.
 `)
 
 var DeleteFailed = berror.DefineCode(5002008, moduleName, "DeleteFailed", `
-Beego attempt to delete cache item failed. Please check if the target key is correct.
+rungo attempt to delete cache item failed. Please check if the target key is correct.
 `)
 
 var (

@@ -1,4 +1,4 @@
-// Copyright 2014 beego Author. All Rights Reserved.
+// Copyright 2014 rungo Author. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -43,7 +43,7 @@ var beeAdminApp *adminApp
 //	 	}
 //	 	return true
 //	}
-//	beego.FilterMonitorFunc = MyFilterMonitor.
+//	rungo.FilterMonitorFunc = MyFilterMonitor.
 var FilterMonitorFunc func(string, string, time.Duration, string, int) bool
 
 func init() {
@@ -82,7 +82,7 @@ type adminApp struct {
 	*HttpServer
 }
 
-// Run start Beego admin
+// Run start rungo admin
 func (admin *adminApp) Run() {
 	logs.Debug("now we don't start tasks here, if you use task module," +
 		" please invoke task.StartTask, or task will not be executed")

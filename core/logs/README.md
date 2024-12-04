@@ -64,7 +64,7 @@ Configure like this:
 
 ```golang
 log := NewLogger(10000)
-log.SetLogger("smtp", `{"username":"beegotest@gmail.com","password":"xxxxxxxx","host":"smtp.gmail.com:587","sendTos":["xiemengjun@gmail.com"]}`)
+log.SetLogger("smtp", `{"username":"rungotest@gmail.com","password":"xxxxxxxx","host":"smtp.gmail.com:587","sendTos":["xiemengjun@gmail.com"]}`)
 log.Critical("sendmail critical")
 time.Sleep(time.Second * 30)
 ```

@@ -1,4 +1,4 @@
-// Copyright 2021 beego
+// Copyright 2021 rungo
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -18,11 +18,11 @@ import (
 	"net/http"
 	"net/http/httptest"
 
-	beegoCtx "github.com/rachelos/rungo/server/web/context"
+	rungoCtx "github.com/rachelos/rungo/server/web/context"
 )
 
-func NewMockContext(req *http.Request) (*beegoCtx.Context, *httptest.ResponseRecorder) {
-	ctx := beegoCtx.NewContext()
+func NewMockContext(req *http.Request) (*rungoCtx.Context, *httptest.ResponseRecorder) {
+	ctx := rungoCtx.NewContext()
 	resp := httptest.NewRecorder()
 	ctx.Reset(resp, req)
 	return ctx, resp

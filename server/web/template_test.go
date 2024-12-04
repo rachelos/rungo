@@ -1,4 +1,4 @@
-// Copyright 2014 beego Author. All Rights Reserved.
+// Copyright 2014 rungo Author. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -34,7 +34,7 @@ var header = `{{define "header"}}
 var index = `<!DOCTYPE html>
 <html>
   <head>
-    <title>beego welcome template</title>
+    <title>rungo welcome template</title>
   </head>
   <body>
 {{template "block"}}
@@ -104,7 +104,7 @@ var menu = `<div class="menu">
 var user = `<!DOCTYPE html>
 <html>
   <head>
-    <title>beego welcome template</title>
+    <title>rungo welcome template</title>
   </head>
   <body>
 {{template "../public/menu.tpl"}}
@@ -287,7 +287,7 @@ func (d TestingFileSystem) Open(name string) (http.File, error) {
 var outputBinData = `<!DOCTYPE html>
 <html>
   <head>
-    <title>beego welcome template</title>
+    <title>rungo welcome template</title>
   </head>
   <body>
 

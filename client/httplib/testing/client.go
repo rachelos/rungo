@@ -1,4 +1,4 @@
-// Copyright 2014 beego Author. All Rights Reserved.
+// Copyright 2014 rungo Author. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -23,9 +23,9 @@ var (
 	baseURL = "http://localhost:"
 )
 
-// TestHTTPRequest beego test request client
+// TestHTTPRequest rungo test request client
 type TestHTTPRequest struct {
-	httplib.BeegoHTTPRequest
+	httplib.RungoHTTPRequest
 }
 
 func SetTestingPort(p string) {

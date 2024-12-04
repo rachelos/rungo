@@ -1,4 +1,4 @@
-// Copyright 2014 beego Author. All Rights Reserved.
+// Copyright 2014 rungo Author. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -104,7 +104,7 @@ type Manager struct {
 // json config:
 // 1. is https  default false
 // 2. hashfunc  default sha1
-// 3. hashkey default beegosessionkey
+// 3. hashkey default rungosessionkey
 // 4. maxage default is none
 func NewManager(provideName string, cf *ManagerConfig) (*Manager, error) {
 	provider, ok := provides[provideName]

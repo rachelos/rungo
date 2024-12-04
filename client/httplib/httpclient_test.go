@@ -1,4 +1,4 @@
-// Copyright 2020 beego
+// Copyright 2020 rungo
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -30,7 +30,7 @@ import (
 )
 
 func TestNewClient(t *testing.T) {
-	client, err := NewClient("test1", "http://beego.vip", WithEnableCookie(true))
+	client, err := NewClient("test1", "http://rungo.vip", WithEnableCookie(true))
 	assert.NoError(t, err)
 	assert.NotNil(t, client)
 	assert.Equal(t, true, client.Setting.EnableCookie)
@@ -151,7 +151,7 @@ func TestClient(t *testing.T) {
 
 func (c *ClientTestSuite) TestClientHandleCarrier() {
 	t := c.T()
-	v := "beego"
+	v := "rungo"
 	client, err := NewClient("test", "http://localhost:8080/",
 		WithUserAgent(v))
 	require.NoError(t, err)

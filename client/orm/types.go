@@ -1,4 +1,4 @@
-// Copyright 2014 beego Author. All Rights Reserved.
+// Copyright 2014 rungo Author. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -166,7 +166,7 @@ type DML interface {
 	// for example:
 	// user := User{Id: 2}
 	//	user.Langs = append(user.Langs, "zh-CN", "en-US")
-	//	user.Extra.Name = "beego"
+	//	user.Extra.Name = "rungo"
 	//	user.Extra.Data = "orm"
 	//	num, err = Ormer.Update(&user, "Langs", "Extra")
 	Update(md interface{}, cols ...string) (int64, error)

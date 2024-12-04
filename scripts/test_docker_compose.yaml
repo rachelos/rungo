@@ -1,6 +1,6 @@
 services:
   redis:
-    container_name: "beego-redis"
+    container_name: "rungo-redis"
     image: redis
     environment:
       - ALLOW_EMPTY_PASSWORD=yes
@@ -8,32 +8,32 @@ services:
       - "6379:6379"
 
   mysql:
-    container_name: "beego-mysql"
+    container_name: "rungo-mysql"
     image: mysql:5.7.30
     ports:
     - "13306:3306"
     environment:
       - MYSQL_ROOT_PASSWORD=1q2w3e
       - MYSQL_DATABASE=orm_test
-      - MYSQL_USER=beego
+      - MYSQL_USER=rungo
       - MYSQL_PASSWORD=test
 
   postgresql:
-    container_name: "beego-postgresql"
+    container_name: "rungo-postgresql"
     image: bitnami/postgresql:latest
     ports:
     - "5432:5432"
     environment:
       - ALLOW_EMPTY_PASSWORD=yes
   ssdb:
-    container_name: "beego-ssdb"
+    container_name: "rungo-ssdb"
     image: tsl0922/ssdb
     environment:
       - SSDB_PORT=8888
     ports:
     - "8888:8888"
   memcache:
-    container_name: "beego-memcache"
+    container_name: "rungo-memcache"
     image: memcached
     ports:
     - "11211:11211"
@@ -46,7 +46,7 @@ services:
       && etcdctl put current.string hello
       && etcdctl put current.serialize.name test
       "
-    container_name: "beego-etcd"
+    container_name: "rungo-etcd"
     environment:
       - ALLOW_NONE_AUTHENTICATION=yes
 #      - ETCD_ADVERTISE_CLIENT_URLS=http://etcd:2379

@@ -1,9 +1,12 @@
 module github.com/rachelos/rungo
+
+go 1.22.10
+
 require (
-	github.com/beego/x2j v0.0.0-20131220205130-a0352aadc542
 	github.com/bits-and-blooms/bloom/v3 v3.7.0
 	github.com/bradfitz/gomemcache v0.0.0-20230905024940-24af94b03874
 	github.com/casbin/casbin v1.9.1
+	github.com/clbanning/x2j v0.0.0-20191024224557-825249438eec
 	github.com/cloudflare/golz4 v0.0.0-20240916140612-caecf3c00c06
 	github.com/couchbase/go-couchbase v0.1.1
 	github.com/elastic/go-elasticsearch/v6 v6.8.10

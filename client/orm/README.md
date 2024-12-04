@@ -1,4 +1,4 @@
-# beego orm
+# rungo orm
 
 [![Build Status](https://drone.io/github.com/rachelos/rungo/status.png)](https://drone.io/github.com/rachelos/rungo/latest)
 

@@ -1,4 +1,4 @@
-// Copyright 2014 beego Author. All Rights Reserved.
+// Copyright 2014 rungo Author. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -16,15 +16,15 @@ package web
 
 var indexTpl = `
 {{define "content"}}
-<h1>Beego Admin Dashboard</h1>
+<h1>rungo Admin Dashboard</h1>
 <p>
 For detail usage please check our document:
 </p>
 <p>
-<a target="_blank" href="http://beego.vip/docs/module/admin.md">Toolbox</a>
+<a target="_blank" href="http://rungo.vip/docs/module/admin.md">Toolbox</a>
 </p>
 <p>
-<a target="_blank" href="http://beego.vip/docs/advantage/monitor.md">Live Monitor</a>
+<a target="_blank" href="http://rungo.vip/docs/advantage/monitor.md">Live Monitor</a>
 </p>
 {{.Content}}
 {{end}}`
@@ -249,7 +249,7 @@ var dashboardTpl = `
 
 <title>
 
-Welcome to Beego Admin Dashboard
+Welcome to rungo Admin Dashboard
 
 </title>
 

@@ -1,4 +1,4 @@
-// Copyright 2014 beego Author. All Rights Reserved.
+// Copyright 2014 rungo Author. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -46,7 +46,7 @@ func TestFlashHeader(t *testing.T) {
 	// get the Set-Cookie value
 	sc := w.Header().Get("Set-Cookie")
 	// match for the expected header
-	res := strings.Contains(sc, "BEEGO_FLASH=%00notice%23BEEGOFLASH%23TestFlashString%00")
+	res := strings.Contains(sc, "rungo_FLASH=%00notice%23rungoFLASH%23TestFlashString%00")
 	// validate the assertion
 	if !res {
 		t.Errorf("TestFlashHeader() unable to validate flash message")

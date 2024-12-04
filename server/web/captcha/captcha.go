@@ -1,4 +1,4 @@
-// Copyright 2014 beego Author. All Rights Reserved.
+// Copyright 2014 rungo Author. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -29,13 +29,13 @@
 // var cpt *captcha.Captcha
 //
 //	func init() {
-//		// use beego cache system store the captcha data
+//		// use rungo cache system store the captcha data
 //		store := cache.NewMemoryCache()
 //		cpt = captcha.NewWithFilter("/captcha/", store)
 //	}
 //
 //	type MainController struct {
-//		beego.Controller
+//		rungo.Controller
 //	}
 //
 //	func (this *MainController) Get() {
@@ -92,7 +92,7 @@ const (
 
 // Captcha struct
 type Captcha struct {
-	// beego cache store
+	// rungo cache store
 	store Storage
 
 	// url prefix for captcha image
@@ -127,7 +127,7 @@ func (c *Captcha) genRandChars() []byte {
 	return utils.RandomCreateBytes(c.ChallengeNums, defaultChars...)
 }
 
-// Handler beego filter handler for serve captcha image
+// Handler rungo filter handler for serve captcha image
 func (c *Captcha) Handler(ctx *context.Context) {
 	var chars []byte
 

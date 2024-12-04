@@ -1,4 +1,4 @@
-// Copyright 2014 beego Author. All Rights Reserved.
+// Copyright 2014 rungo Author. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -34,7 +34,7 @@ var levelNames = [...]string{"emergency", "alert", "critical", "error", "warning
 // Init file logger with json config.
 // jsonConfig like:
 //	{
-//	"filename":"logs/beego.log",
+//	"filename":"logs/rungo.log",
 //	"maxLines":0,
 //	"maxsize":0,
 //	"daily":true,

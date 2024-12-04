@@ -1,4 +1,4 @@
-// Copyright 2014 beego Author. All Rights Reserved.
+// Copyright 2014 rungo Author. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -23,11 +23,11 @@ import (
 )
 
 func TestDefaults(t *testing.T) {
-	if BConfig.WebConfig.FlashName != "BEEGO_FLASH" {
+	if BConfig.WebConfig.FlashName != "rungo_FLASH" {
 		t.Errorf("FlashName was not set to default.")
 	}
 
-	if BConfig.WebConfig.FlashSeparator != "BEEGOFLASH" {
+	if BConfig.WebConfig.FlashSeparator != "rungoFLASH" {
 		t.Errorf("FlashName was not set to default.")
 	}
 }
@@ -38,11 +38,11 @@ func TestLoadAppConfig(t *testing.T) {
 
 func TestAssignConfig_01(t *testing.T) {
 	_BConfig := &Config{}
-	_BConfig.AppName = "beego_test"
+	_BConfig.AppName = "rungo_test"
 	jcf := &beeJson.JSONConfig{}
-	ac, _ := jcf.ParseData([]byte(`{"AppName":"beego_json"}`))
+	ac, _ := jcf.ParseData([]byte(`{"AppName":"rungo_json"}`))
 	assignSingleConfig(_BConfig, ac)
-	if _BConfig.AppName != "beego_json" {
+	if _BConfig.AppName != "rungo_json" {
 		t.Log(_BConfig)
 		t.FailNow()
 	}
@@ -113,7 +113,7 @@ func TestAssignConfig_02(t *testing.T) {
 
 func TestAssignConfig_03(t *testing.T) {
 	jcf := &beeJson.JSONConfig{}
-	ac, _ := jcf.ParseData([]byte(`{"AppName":"beego"}`))
+	ac, _ := jcf.ParseData([]byte(`{"AppName":"rungo"}`))
 	ac.Set("AppName", "test_app")
 	ac.Set("RunMode", "online")
 	ac.Set("StaticDir", "download:down download2:down2")

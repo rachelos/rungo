@@ -1,4 +1,4 @@
-// Copyright 2014 beego Author. All Rights Reserved.
+// Copyright 2014 rungo Author. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -857,7 +857,7 @@ func TestCustomField(t *testing.T) {
 	throwFailNow(t, err)
 
 	user.Langs = append(user.Langs, "zh-CN", "en-US")
-	user.Extra.Name = "beego"
+	user.Extra.Name = "rungo"
 	user.Extra.Data = "orm"
 	_, err = dORM.Update(&user, "Langs", "Extra")
 	throwFailNow(t, err)
@@ -869,7 +869,7 @@ func TestCustomField(t *testing.T) {
 	throwFailNow(t, AssertIs(user.Langs[0], "zh-CN"))
 	throwFailNow(t, AssertIs(user.Langs[1], "en-US"))
 
-	throwFailNow(t, AssertIs(user.Extra.Name, "beego"))
+	throwFailNow(t, AssertIs(user.Extra.Name, "rungo"))
 	throwFailNow(t, AssertIs(user.Extra.Data, "orm"))
 
 	var users []User
@@ -877,13 +877,13 @@ func TestCustomField(t *testing.T) {
 	n, err := dORM.Raw(fmt.Sprintf("SELECT * FROM %suser%s where id=?", Q, Q), 2).QueryRows(&users)
 	throwFailNow(t, err)
 	throwFailNow(t, AssertIs(n, 1))
-	throwFailNow(t, AssertIs(users[0].Extra.Name, "beego"))
+	throwFailNow(t, AssertIs(users[0].Extra.Name, "rungo"))
 	throwFailNow(t, AssertIs(users[0].Extra.Data, "orm"))
 
 	user = User{}
 	err = dORM.Raw(fmt.Sprintf("SELECT * FROM %suser%s where id=?", Q, Q), 2).QueryRow(&user)
 	throwFailNow(t, err)
-	throwFailNow(t, AssertIs(user.Extra.Name, "beego"))
+	throwFailNow(t, AssertIs(user.Extra.Name, "rungo"))
 	throwFailNow(t, AssertIs(user.Extra.Data, "orm"))
 }
 
@@ -2788,7 +2788,7 @@ func TestInsertOrUpdate(t *testing.T) {
 		_, err := dORM.InsertOrUpdate(&spec.user, spec.colConflitAndArgs...)
 		if err != nil {
 			fmt.Println(err)
-			if !(err.Error() == "postgres version must 9.5 or higher" || err.Error() == "`sqlite3` nonsupport InsertOrUpdate in beego") {
+			if !(err.Error() == "postgres version must 9.5 or higher" || err.Error() == "`sqlite3` nonsupport InsertOrUpdate in rungo") {
 				throwFailNow(t, err)
 			}
 			continue
@@ -2830,7 +2830,7 @@ func TestStrPkInsert(t *testing.T) {
 	_, err = dORM.InsertOrUpdate(strPkForUpsert, `id`)
 	if err != nil {
 		fmt.Println(err)
-		if err.Error() == "postgres version must 9.5 or higher" || err.Error() == "`sqlite3` nonsupport InsertOrUpdate in beego" {
+		if err.Error() == "postgres version must 9.5 or higher" || err.Error() == "`sqlite3` nonsupport InsertOrUpdate in rungo" {
 			return
 		} else if err == ErrLastInsertIdUnavailable {
 			return

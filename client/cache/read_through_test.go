@@ -1,4 +1,4 @@
-// Copyright 2014 beego Author. All Rights Reserved.
+// Copyright 2014 rungo Author. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -160,12 +160,12 @@ func ExampleNewReadThroughCache() {
 		panic(err)
 	}
 
-	val, err := c.Get(context.Background(), "Beego")
+	val, err := c.Get(context.Background(), "rungo")
 	if err != nil {
 		panic(err)
 	}
 	fmt.Print(val)
 
 	// Output:
-	// hello, Beego
+	// hello, rungo
 }

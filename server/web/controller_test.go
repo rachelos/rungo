@@ -1,4 +1,4 @@
-// Copyright 2014 beego Author. All Rights Reserved.
+// Copyright 2014 rungo Author. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -200,7 +200,7 @@ func TestBindJson(t *testing.T) {
 	}
 	header := map[string][]string{"Content-Type": {"application/json"}}
 	request := &http.Request{Header: header}
-	input := &context.BeegoInput{RequestBody: []byte(`{"foo": "FOO"}`)}
+	input := &context.RungoInput{RequestBody: []byte(`{"foo": "FOO"}`)}
 	ctx := &context.Context{Request: request, Input: input}
 	ctrlr := Controller{Ctx: ctx}
 	err := ctrlr.Bind(&s)
@@ -214,7 +214,7 @@ func TestBindNoContentType(t *testing.T) {
 	}
 	header := map[string][]string{}
 	request := &http.Request{Header: header}
-	input := &context.BeegoInput{RequestBody: []byte(`{"foo": "FOO"}`)}
+	input := &context.RungoInput{RequestBody: []byte(`{"foo": "FOO"}`)}
 	ctx := &context.Context{Request: request, Input: input}
 	ctrlr := Controller{Ctx: ctx}
 	err := ctrlr.Bind(&s)
@@ -232,7 +232,7 @@ func TestBindXML(t *testing.T) {
 </root>`
 	header := map[string][]string{"Content-Type": {"text/xml"}}
 	request := &http.Request{Header: header}
-	input := &context.BeegoInput{RequestBody: []byte(xmlBody)}
+	input := &context.RungoInput{RequestBody: []byte(xmlBody)}
 	ctx := &context.Context{Request: request, Input: input}
 	ctrlr := Controller{Ctx: ctx}
 	err := ctrlr.Bind(&s)
@@ -246,7 +246,7 @@ func TestBindYAML(t *testing.T) {
 	}
 	header := map[string][]string{"Content-Type": {"application/x-yaml"}}
 	request := &http.Request{Header: header}
-	input := &context.BeegoInput{RequestBody: []byte("foo: FOO")}
+	input := &context.RungoInput{RequestBody: []byte("foo: FOO")}
 	ctx := &context.Context{Request: request, Input: input}
 	ctrlr := Controller{Ctx: ctx}
 	err := ctrlr.Bind(&s)

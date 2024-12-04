@@ -1,4 +1,4 @@
-// Copyright 2014 beego Author. All Rights Reserved.
+// Copyright 2014 rungo Author. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -31,7 +31,7 @@ import (
 )
 
 var (
-	beegoTplFuncMap           = make(template.FuncMap)
+	rungoTplFuncMap           = make(template.FuncMap)
 	beeViewPathTemplateLocked = false
 	// beeViewPathTemplates caching map and supported template file extensions per view
 	beeViewPathTemplates = make(map[string]map[string]*template.Template)
@@ -77,37 +77,37 @@ func ExecuteViewPathTemplate(wr io.Writer, name string, viewPath string, data in
 }
 
 func init() {
-	beegoTplFuncMap["dateformat"] = DateFormat
-	beegoTplFuncMap["date"] = Date
-	beegoTplFuncMap["compare"] = Compare
-	beegoTplFuncMap["compare_not"] = CompareNot
-	beegoTplFuncMap["not_nil"] = NotNil
-	beegoTplFuncMap["not_null"] = NotNil
-	beegoTplFuncMap["substr"] = Substr
-	beegoTplFuncMap["html2str"] = HTML2str
-	beegoTplFuncMap["str2html"] = Str2html
-	beegoTplFuncMap["htmlquote"] = Htmlquote
-	beegoTplFuncMap["htmlunquote"] = Htmlunquote
-	beegoTplFuncMap["renderform"] = RenderForm
-	beegoTplFuncMap["assets_js"] = AssetsJs
-	beegoTplFuncMap["assets_css"] = AssetsCSS
-	beegoTplFuncMap["config"] = GetConfig
-	beegoTplFuncMap["map_get"] = MapGet
+	rungoTplFuncMap["dateformat"] = DateFormat
+	rungoTplFuncMap["date"] = Date
+	rungoTplFuncMap["compare"] = Compare
+	rungoTplFuncMap["compare_not"] = CompareNot
+	rungoTplFuncMap["not_nil"] = NotNil
+	rungoTplFuncMap["not_null"] = NotNil
+	rungoTplFuncMap["substr"] = Substr
+	rungoTplFuncMap["html2str"] = HTML2str
+	rungoTplFuncMap["str2html"] = Str2html
+	rungoTplFuncMap["htmlquote"] = Htmlquote
+	rungoTplFuncMap["htmlunquote"] = Htmlunquote
+	rungoTplFuncMap["renderform"] = RenderForm
+	rungoTplFuncMap["assets_js"] = AssetsJs
+	rungoTplFuncMap["assets_css"] = AssetsCSS
+	rungoTplFuncMap["config"] = GetConfig
+	rungoTplFuncMap["map_get"] = MapGet
 
 	// Comparisons
-	beegoTplFuncMap["eq"] = eq // ==
-	beegoTplFuncMap["ge"] = ge // >=
-	beegoTplFuncMap["gt"] = gt // >
-	beegoTplFuncMap["le"] = le // <=
-	beegoTplFuncMap["lt"] = lt // <
-	beegoTplFuncMap["ne"] = ne // !=
+	rungoTplFuncMap["eq"] = eq // ==
+	rungoTplFuncMap["ge"] = ge // >=
+	rungoTplFuncMap["gt"] = gt // >
+	rungoTplFuncMap["le"] = le // <=
+	rungoTplFuncMap["lt"] = lt // <
+	rungoTplFuncMap["ne"] = ne // !=
 
-	beegoTplFuncMap["urlfor"] = URLFor // build an URL to match a Controller and it's method
+	rungoTplFuncMap["urlfor"] = URLFor // build an URL to match a Controller and it's method
 }
 
 // AddFuncMap let user to register a func in the template.
 func AddFuncMap(key string, fn interface{}) error {
-	beegoTplFuncMap[key] = fn
+	rungoTplFuncMap[key] = fn
 	return nil
 }
 
@@ -141,7 +141,7 @@ func (tf *templateFile) visit(paths string, f os.FileInfo, err error) error {
 	return nil
 }
 
-// HasTemplateExt return this path contains supported template extension of beego or not.
+// HasTemplateExt return this path contains supported template extension of rungo or not.
 func HasTemplateExt(paths string) bool {
 	for _, v := range beeTemplateExt {
 		if strings.HasSuffix(paths, "."+v) {
@@ -163,13 +163,13 @@ func AddTemplateExt(ext string) {
 
 // AddViewPath adds a new path to the supported view paths.
 // Can later be used by setting a controller ViewPath to this folder
-// will panic if called after beego.Run()
+// will panic if called after rungo.Run()
 func AddViewPath(viewPath string) error {
 	if beeViewPathTemplateLocked {
 		if _, exist := beeViewPathTemplates[viewPath]; exist {
 			return nil // Ignore if viewpath already exists
 		}
-		panic("Can not add new view paths after beego.Run()")
+		panic("Can not add new view paths after rungo.Run()")
 	}
 	beeViewPathTemplates[viewPath] = make(map[string]*template.Template)
 	return BuildTemplate(viewPath)
@@ -180,7 +180,7 @@ func lockViewPaths() {
 }
 
 // BuildTemplate will build all template files in a directory.
-// it makes beego can render any template file in view directory.
+// it makes rungo can render any template file in view directory.
 func BuildTemplate(dir string, files ...string) error {
 	var err error
 	fs := beeTemplateFS()
@@ -216,7 +216,7 @@ func BuildTemplate(dir string, files ...string) error {
 				if len(ext) == 0 {
 					t, err = getTemplate(self.root, fs, file, v...)
 				} else if fn, ok := beeTemplateEngines[ext[1:]]; ok {
-					t, err = fn(self.root, file, beegoTplFuncMap)
+					t, err = fn(self.root, file, rungoTplFuncMap)
 				} else {
 					t, err = getTemplate(self.root, fs, file, v...)
 				}
@@ -278,7 +278,7 @@ func getTplDeep(root string, fs http.FileSystem, file string, parent string, t *
 }
 
 func getTemplate(root string, fs http.FileSystem, file string, others ...string) (t *template.Template, err error) {
-	t = template.New(file).Delims(BConfig.WebConfig.TemplateLeft, BConfig.WebConfig.TemplateRight).Funcs(beegoTplFuncMap)
+	t = template.New(file).Delims(BConfig.WebConfig.TemplateLeft, BConfig.WebConfig.TemplateRight).Funcs(rungoTplFuncMap)
 	var subMods [][]string
 	t, subMods, err = getTplDeep(root, fs, file, "", t)
 	if err != nil {
@@ -363,14 +363,14 @@ func SetTemplateFSFunc(fnt templateFSFunc) {
 	beeTemplateFS = fnt
 }
 
-// SetViewsPath sets view directory path in beego application.
+// SetViewsPath sets view directory path in rungo application.
 func SetViewsPath(path string) *HttpServer {
 	BConfig.WebConfig.ViewsPath = path
 	return BeeApp
 }
 
-// SetStaticPath sets static directory path and proper url pattern in beego application.
-// if beego.SetStaticPath("static","public"), visit /static/* to load static file in folder "public".
+// SetStaticPath sets static directory path and proper url pattern in rungo application.
+// if rungo.SetStaticPath("static","public"), visit /static/* to load static file in folder "public".
 func SetStaticPath(url string, path string) *HttpServer {
 	if !strings.HasPrefix(url, "/") {
 		url = "/" + url
@@ -382,7 +382,7 @@ func SetStaticPath(url string, path string) *HttpServer {
 	return BeeApp
 }
 
-// DelStaticPath removes the static folder setting in this url pattern in beego application.
+// DelStaticPath removes the static folder setting in this url pattern in rungo application.
 func DelStaticPath(url string) *HttpServer {
 	if !strings.HasPrefix(url, "/") {
 		url = "/" + url

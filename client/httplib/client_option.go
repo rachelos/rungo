@@ -1,4 +1,4 @@
-// Copyright 2020 beego
+// Copyright 2020 rungo
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ import (
 
 type (
 	ClientOption           func(client *Client)
-	BeegoHTTPRequestOption func(request *BeegoHTTPRequest)
+	RungoHTTPRequestOption func(request *RungoHTTPRequest)
 )
 
 // WithEnableCookie will enable cookie in all subsequent request
@@ -68,8 +68,8 @@ func WithCheckRedirect(redirect func(req *http.Request, via []*http.Request) err
 	}
 }
 
-// WithHTTPSetting can replace beegoHTTPSeting
-func WithHTTPSetting(setting BeegoHTTPSettings) ClientOption {
+// WithHTTPSetting can replace rungoHTTPSeting
+func WithHTTPSetting(setting rungoHTTPSettings) ClientOption {
 	return func(client *Client) {
 		client.Setting = setting
 	}
@@ -82,32 +82,32 @@ func WithEnableGzip(enable bool) ClientOption {
 	}
 }
 
-// BeegoHttpRequestOption
+// RungoHTTPRequestOption
 
-// WithTimeout sets connect time out and read-write time out for BeegoRequest.
-func WithTimeout(connectTimeout, readWriteTimeout time.Duration) BeegoHTTPRequestOption {
-	return func(request *BeegoHTTPRequest) {
+// WithTimeout sets connect time out and read-write time out for rungoRequest.
+func WithTimeout(connectTimeout, readWriteTimeout time.Duration) RungoHTTPRequestOption {
+	return func(request *RungoHTTPRequest) {
 		request.SetTimeout(connectTimeout, readWriteTimeout)
 	}
 }
 
 // WithHeader adds header item string in request.
-func WithHeader(key, value string) BeegoHTTPRequestOption {
-	return func(request *BeegoHTTPRequest) {
+func WithHeader(key, value string) RungoHTTPRequestOption {
+	return func(request *RungoHTTPRequest) {
 		request.Header(key, value)
 	}
 }
 
 // WithCookie adds a cookie to the request.
-func WithCookie(cookie *http.Cookie) BeegoHTTPRequestOption {
-	return func(request *BeegoHTTPRequest) {
+func WithCookie(cookie *http.Cookie) RungoHTTPRequestOption {
+	return func(request *RungoHTTPRequest) {
 		request.Header("Cookie", cookie.String())
 	}
 }
 
 // WithTokenFactory adds a custom function to set Authorization
-func WithTokenFactory(tokenFactory func() string) BeegoHTTPRequestOption {
-	return func(request *BeegoHTTPRequest) {
+func WithTokenFactory(tokenFactory func() string) RungoHTTPRequestOption {
+	return func(request *RungoHTTPRequest) {
 		t := tokenFactory()
 
 		request.Header("Authorization", t)
@@ -115,30 +115,30 @@ func WithTokenFactory(tokenFactory func() string) BeegoHTTPRequestOption {
 }
 
 // WithBasicAuth adds a custom function to set basic auth
-func WithBasicAuth(basicAuth func() (string, string)) BeegoHTTPRequestOption {
-	return func(request *BeegoHTTPRequest) {
+func WithBasicAuth(basicAuth func() (string, string)) RungoHTTPRequestOption {
+	return func(request *RungoHTTPRequest) {
 		username, password := basicAuth()
 		request.SetBasicAuth(username, password)
 	}
 }
 
 // WithFilters will use the filter as the invocation filters
-func WithFilters(fcs ...FilterChain) BeegoHTTPRequestOption {
-	return func(request *BeegoHTTPRequest) {
+func WithFilters(fcs ...FilterChain) RungoHTTPRequestOption {
+	return func(request *RungoHTTPRequest) {
 		request.SetFilters(fcs...)
 	}
 }
 
 // WithContentType adds ContentType in header
-func WithContentType(contentType string) BeegoHTTPRequestOption {
-	return func(request *BeegoHTTPRequest) {
+func WithContentType(contentType string) RungoHTTPRequestOption {
+	return func(request *RungoHTTPRequest) {
 		request.Header(contentTypeKey, contentType)
 	}
 }
 
 // WithParam adds query param in to request.
-func WithParam(key, value string) BeegoHTTPRequestOption {
-	return func(request *BeegoHTTPRequest) {
+func WithParam(key, value string) RungoHTTPRequestOption {
+	return func(request *RungoHTTPRequest) {
 		request.Param(key, value)
 	}
 }
@@ -147,8 +147,8 @@ func WithParam(key, value string) BeegoHTTPRequestOption {
 // default is 0 (never retry)
 // -1 retry indefinitely (forever)
 // Other numbers specify the exact retry amount
-func WithRetry(times int, delay time.Duration) BeegoHTTPRequestOption {
-	return func(request *BeegoHTTPRequest) {
+func WithRetry(times int, delay time.Duration) RungoHTTPRequestOption {
+	return func(request *RungoHTTPRequest) {
 		request.Retries(times)
 		request.RetryDelay(delay)
 	}

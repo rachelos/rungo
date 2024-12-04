@@ -1,4 +1,4 @@
-// Copyright 2014 beego Author. All Rights Reserved.
+// Copyright 2014 rungo Author. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -36,17 +36,17 @@ type hookfunc func() error
 var hooks = make([]hookfunc, 0) // hook function slice to store the hookfunc
 
 // AddAPPStartHook is used to register the hookfunc
-// The hookfuncs will run in beego.Run()
+// The hookfuncs will run in rungo.Run()
 // such as initiating session , starting middleware , building template, starting admin control and so on.
 func AddAPPStartHook(hf ...hookfunc) {
 	hooks = append(hooks, hf...)
 }
 
-// Run beego application.
-// beego.Run() default run on HttpPort
-// beego.Run("localhost")
-// beego.Run(":8089")
-// beego.Run("127.0.0.1:8089")
+// Run rungo application.
+// rungo.Run() default run on HttpPort
+// rungo.Run("localhost")
+// rungo.Run(":8089")
+// rungo.Run("127.0.0.1:8089")
 func Run(params ...string) {
 	if len(params) > 0 && params[0] != "" {
 		BeeApp.Run(params[0])
@@ -55,7 +55,7 @@ func Run(params ...string) {
 	}
 }
 
-// RunWithMiddleWares Run beego application with middlewares.
+// RunWithMiddleWares Run rungo application with middlewares.
 func RunWithMiddleWares(addr string, mws ...MiddleWare) {
 	BeeApp.Run(addr, mws...)
 }
@@ -84,15 +84,15 @@ func initBeforeHTTPRun() {
 	})
 }
 
-// TestBeegoInit is for test package init
-func TestBeegoInit(ap string) {
+// TestrungoInit is for test package init
+func TestrungoInit(ap string) {
 	path := filepath.Join(ap, "conf", "app.conf")
 	os.Chdir(ap)
-	InitBeegoBeforeTest(path)
+	InitrungoBeforeTest(path)
 }
 
-// InitBeegoBeforeTest is for test package init
-func InitBeegoBeforeTest(appConfigPath string) {
+// InitrungoBeforeTest is for test package init
+func InitrungoBeforeTest(appConfigPath string) {
 	if err := LoadAppConfig(appConfigProvider, appConfigPath); err != nil {
 		panic(err)
 	}

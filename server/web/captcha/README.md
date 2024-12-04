@@ -14,13 +14,13 @@ import (
 var cpt *captcha.Captcha
 
 func init() {
-	// use beego cache system store the captcha data
+	// use rungo cache system store the captcha data
 	store := cache.NewMemoryCache()
 	cpt = captcha.NewWithFilter("/captcha/", store)
 }
 
 type MainController struct {
-	beego.Controller
+	rungo.Controller
 }
 
 func (this *MainController) Get() {

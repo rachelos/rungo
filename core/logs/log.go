@@ -1,4 +1,4 @@
-// Copyright 2014 beego Author. All Rights Reserved.
+// Copyright 2014 rungo Author. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -57,7 +57,7 @@ const (
 // the real log level will be LevelEmergency
 const levelLoggerImpl = -1
 
-// Name for adapter with beego official support
+// Name for adapter with rungo official support
 const (
 	AdapterConsole   = "console"
 	AdapterFile      = "file"
@@ -106,7 +106,7 @@ func Register(name string, log newLoggerFunc) {
 	adapters[name] = log
 }
 
-// BeeLogger is default logger in beego application.
+// BeeLogger is default logger in rungo application.
 // Can contain several providers and log message into all providers.
 type BeeLogger struct {
 	lock                sync.Mutex
@@ -685,7 +685,7 @@ func GetLogger(prefixes ...string) *log.Logger {
 }
 
 // EnableFullFilePath enables full file path logging. Disabled by default
-// e.g "/home/Documents/GitHub/beego/mainapp/" instead of "mainapp"
+// e.g "/home/Documents/GitHub/rungo/mainapp/" instead of "mainapp"
 func EnableFullFilePath(b bool) {
 	beeLogger.enableFullFilePath = b
 }

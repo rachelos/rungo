@@ -1,4 +1,4 @@
-// Copyright 2014 beego Author. All Rights Reserved.
+// Copyright 2014 rungo Author. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -17,7 +17,7 @@
 //
 // import "github.com/rachelos/rungo/client/httplib"
 //
-//	b := httplib.Post("http://beego.vip/")
+//	b := httplib.Post("http://rungo.vip/")
 //	b.Param("username","astaxie")
 //	b.Param("password","123456")
 //	b.PostFile("uploadfile1", "httplib.pdf")
@@ -55,25 +55,25 @@ import (
 const contentTypeKey = "Content-Type"
 
 // it will be the last filter and execute request.Do
-var doRequestFilter = func(ctx context.Context, req *BeegoHTTPRequest) (*http.Response, error) {
+var doRequestFilter = func(ctx context.Context, req *RungoHTTPRequest) (*http.Response, error) {
 	return req.doRequest(ctx)
 }
 
-// NewBeegoRequest returns *BeegoHttpRequest with specific method
+// NewrungoRequest returns *RungoHTTPRequest with specific method
 // TODO add error as return value
 // I think if we don't return error
-// users are hard to check whether we create Beego request successfully
-func NewBeegoRequest(rawurl, method string) *BeegoHTTPRequest {
-	return NewBeegoRequestWithCtx(context.Background(), rawurl, method)
+// users are hard to check whether we create rungo request successfully
+func NewrungoRequest(rawurl, method string) *RungoHTTPRequest {
+	return NewrungoRequestWithCtx(context.Background(), rawurl, method)
 }
 
-// NewBeegoRequestWithCtx returns a new BeegoHTTPRequest given a method, URL
-func NewBeegoRequestWithCtx(ctx context.Context, rawurl, method string) *BeegoHTTPRequest {
+// NewrungoRequestWithCtx returns a new RungoHTTPRequest given a method, URL
+func NewrungoRequestWithCtx(ctx context.Context, rawurl, method string) *RungoHTTPRequest {
 	req, err := http.NewRequestWithContext(ctx, method, rawurl, nil)
 	if err != nil {
 		logs.Error("%+v", berror.Wrapf(err, InvalidURLOrMethod, "invalid raw url or method: %s %s", rawurl, method))
 	}
-	return &BeegoHTTPRequest{
+	return &RungoHTTPRequest{
 		url:     rawurl,
 		req:     req,
 		params:  map[string][]string{},
@@ -86,38 +86,38 @@ func NewBeegoRequestWithCtx(ctx context.Context, rawurl, method string) *BeegoHT
 	}
 }
 
-// Get returns *BeegoHttpRequest with GET method.
-func Get(url string) *BeegoHTTPRequest {
-	return NewBeegoRequest(url, "GET")
+// Get returns *RungoHTTPRequest with GET method.
+func Get(url string) *RungoHTTPRequest {
+	return NewrungoRequest(url, "GET")
 }
 
-// Post returns *BeegoHttpRequest with POST method.
-func Post(url string) *BeegoHTTPRequest {
-	return NewBeegoRequest(url, "POST")
+// Post returns *RungoHTTPRequest with POST method.
+func Post(url string) *RungoHTTPRequest {
+	return NewrungoRequest(url, "POST")
 }
 
-// Put returns *BeegoHttpRequest with PUT method.
-func Put(url string) *BeegoHTTPRequest {
-	return NewBeegoRequest(url, "PUT")
+// Put returns *RungoHTTPRequest with PUT method.
+func Put(url string) *RungoHTTPRequest {
+	return NewrungoRequest(url, "PUT")
 }
 
-// Delete returns *BeegoHttpRequest DELETE method.
-func Delete(url string) *BeegoHTTPRequest {
-	return NewBeegoRequest(url, "DELETE")
+// Delete returns *RungoHTTPRequest DELETE method.
+func Delete(url string) *RungoHTTPRequest {
+	return NewrungoRequest(url, "DELETE")
 }
 
-// Head returns *BeegoHttpRequest with HEAD method.
-func Head(url string) *BeegoHTTPRequest {
-	return NewBeegoRequest(url, "HEAD")
+// Head returns *RungoHTTPRequest with HEAD method.
+func Head(url string) *RungoHTTPRequest {
+	return NewrungoRequest(url, "HEAD")
 }
 
-// BeegoHTTPRequest provides more useful methods than http.Request for requesting an url.
-type BeegoHTTPRequest struct {
+// RungoHTTPRequest provides more useful methods than http.Request for requesting an url.
+type RungoHTTPRequest struct {
 	url     string
 	req     *http.Request
 	params  map[string][]string
 	files   map[string]string
-	setting BeegoHTTPSettings
+	setting rungoHTTPSettings
 	resp    *http.Response
 	// body the response body, not the request body
 	body []byte
@@ -126,30 +126,30 @@ type BeegoHTTPRequest struct {
 }
 
 // GetRequest returns the request object
-func (b *BeegoHTTPRequest) GetRequest() *http.Request {
+func (b *RungoHTTPRequest) GetRequest() *http.Request {
 	return b.req
 }
 
 // Setting changes request settings
-func (b *BeegoHTTPRequest) Setting(setting BeegoHTTPSettings) *BeegoHTTPRequest {
+func (b *RungoHTTPRequest) Setting(setting rungoHTTPSettings) *RungoHTTPRequest {
 	b.setting = setting
 	return b
 }
 
 // SetBasicAuth sets the request's Authorization header to use HTTP Basic Authentication with the provided username and password.
-func (b *BeegoHTTPRequest) SetBasicAuth(username, password string) *BeegoHTTPRequest {
+func (b *RungoHTTPRequest) SetBasicAuth(username, password string) *RungoHTTPRequest {
 	b.req.SetBasicAuth(username, password)
 	return b
 }
 
 // SetEnableCookie sets enable/disable cookiejar
-func (b *BeegoHTTPRequest) SetEnableCookie(enable bool) *BeegoHTTPRequest {
+func (b *RungoHTTPRequest) SetEnableCookie(enable bool) *RungoHTTPRequest {
 	b.setting.EnableCookie = enable
 	return b
 }
 
 // SetUserAgent sets User-Agent header field
-func (b *BeegoHTTPRequest) SetUserAgent(useragent string) *BeegoHTTPRequest {
+func (b *RungoHTTPRequest) SetUserAgent(useragent string) *RungoHTTPRequest {
 	b.setting.UserAgent = useragent
 	return b
 }
@@ -158,45 +158,45 @@ func (b *BeegoHTTPRequest) SetUserAgent(useragent string) *BeegoHTTPRequest {
 // default is 0 (never retry)
 // -1 retry indefinitely (forever)
 // Other numbers specify the exact retry amount
-func (b *BeegoHTTPRequest) Retries(times int) *BeegoHTTPRequest {
+func (b *RungoHTTPRequest) Retries(times int) *RungoHTTPRequest {
 	b.setting.Retries = times
 	return b
 }
 
 // RetryDelay sets the time to sleep between reconnection attempts
-func (b *BeegoHTTPRequest) RetryDelay(delay time.Duration) *BeegoHTTPRequest {
+func (b *RungoHTTPRequest) RetryDelay(delay time.Duration) *RungoHTTPRequest {
 	b.setting.RetryDelay = delay
 	return b
 }
 
-// SetTimeout sets connect time out and read-write time out for BeegoRequest.
-func (b *BeegoHTTPRequest) SetTimeout(connectTimeout, readWriteTimeout time.Duration) *BeegoHTTPRequest {
+// SetTimeout sets connect time out and read-write time out for rungoRequest.
+func (b *RungoHTTPRequest) SetTimeout(connectTimeout, readWriteTimeout time.Duration) *RungoHTTPRequest {
 	b.setting.ConnectTimeout = connectTimeout
 	b.setting.ReadWriteTimeout = readWriteTimeout
 	return b
 }
 
 // SetTLSClientConfig sets TLS connection configuration if visiting HTTPS url.
-func (b *BeegoHTTPRequest) SetTLSClientConfig(config *tls.Config) *BeegoHTTPRequest {
+func (b *RungoHTTPRequest) SetTLSClientConfig(config *tls.Config) *RungoHTTPRequest {
 	b.setting.TLSClientConfig = config
 	return b
 }
 
 // Header adds header item string in request.
-func (b *BeegoHTTPRequest) Header(key, value string) *BeegoHTTPRequest {
+func (b *RungoHTTPRequest) Header(key, value string) *RungoHTTPRequest {
 	b.req.Header.Set(key, value)
 	return b
 }
 
 // SetHost set the request host
-func (b *BeegoHTTPRequest) SetHost(host string) *BeegoHTTPRequest {
+func (b *RungoHTTPRequest) SetHost(host string) *RungoHTTPRequest {
 	b.req.Host = host
 	return b
 }
 
 // SetProtocolVersion sets the protocol version for incoming requests.
 // Client requests always use HTTP/1.1
-func (b *BeegoHTTPRequest) SetProtocolVersion(vers string) *BeegoHTTPRequest {
+func (b *RungoHTTPRequest) SetProtocolVersion(vers string) *RungoHTTPRequest {
 	if vers == "" {
 		vers = "HTTP/1.1"
 	}
@@ -213,13 +213,13 @@ func (b *BeegoHTTPRequest) SetProtocolVersion(vers string) *BeegoHTTPRequest {
 }
 
 // SetCookie adds a cookie to the request.
-func (b *BeegoHTTPRequest) SetCookie(cookie *http.Cookie) *BeegoHTTPRequest {
+func (b *RungoHTTPRequest) SetCookie(cookie *http.Cookie) *RungoHTTPRequest {
 	b.req.Header.Add("Cookie", cookie.String())
 	return b
 }
 
 // SetTransport sets the transport field
-func (b *BeegoHTTPRequest) SetTransport(transport http.RoundTripper) *BeegoHTTPRequest {
+func (b *RungoHTTPRequest) SetTransport(transport http.RoundTripper) *RungoHTTPRequest {
 	b.setting.Transport = transport
 	return b
 }
@@ -231,7 +231,7 @@ func (b *BeegoHTTPRequest) SetTransport(transport http.RoundTripper) *BeegoHTTPR
 //		u, _ := url.ParseRequestURI("http://127.0.0.1:8118")
 //		return u, nil
 //	}
-func (b *BeegoHTTPRequest) SetProxy(proxy func(*http.Request) (*url.URL, error)) *BeegoHTTPRequest {
+func (b *RungoHTTPRequest) SetProxy(proxy func(*http.Request) (*url.URL, error)) *RungoHTTPRequest {
 	b.setting.Proxy = proxy
 	return b
 }
@@ -240,32 +240,32 @@ func (b *BeegoHTTPRequest) SetProxy(proxy func(*http.Request) (*url.URL, error))
 //
 // If CheckRedirect is nil, the Client uses its default policy,
 // which is to stop after 10 consecutive requests.
-func (b *BeegoHTTPRequest) SetCheckRedirect(redirect func(req *http.Request, via []*http.Request) error) *BeegoHTTPRequest {
+func (b *RungoHTTPRequest) SetCheckRedirect(redirect func(req *http.Request, via []*http.Request) error) *RungoHTTPRequest {
 	b.setting.CheckRedirect = redirect
 	return b
 }
 
 // SetFilters will use the filter as the invocation filters
-func (b *BeegoHTTPRequest) SetFilters(fcs ...FilterChain) *BeegoHTTPRequest {
+func (b *RungoHTTPRequest) SetFilters(fcs ...FilterChain) *RungoHTTPRequest {
 	b.setting.FilterChains = fcs
 	return b
 }
 
 // AddFilters adds filter
-func (b *BeegoHTTPRequest) AddFilters(fcs ...FilterChain) *BeegoHTTPRequest {
+func (b *RungoHTTPRequest) AddFilters(fcs ...FilterChain) *RungoHTTPRequest {
 	b.setting.FilterChains = append(b.setting.FilterChains, fcs...)
 	return b
 }
 
 // SetEscapeHTML is used to set the flag whether escape HTML special characters during processing
-func (b *BeegoHTTPRequest) SetEscapeHTML(isEscape bool) *BeegoHTTPRequest {
+func (b *RungoHTTPRequest) SetEscapeHTML(isEscape bool) *RungoHTTPRequest {
 	b.setting.EscapeHTML = isEscape
 	return b
 }
 
 // Param adds query param in to request.
 // params build query string as ?key1=value1&key2=value2...
-func (b *BeegoHTTPRequest) Param(key, value string) *BeegoHTTPRequest {
+func (b *RungoHTTPRequest) Param(key, value string) *RungoHTTPRequest {
 	if param, ok := b.params[key]; ok {
 		b.params[key] = append(param, value)
 	} else {
@@ -275,7 +275,7 @@ func (b *BeegoHTTPRequest) Param(key, value string) *BeegoHTTPRequest {
 }
 
 // PostFile adds a post file to the request
-func (b *BeegoHTTPRequest) PostFile(formname, filename string) *BeegoHTTPRequest {
+func (b *RungoHTTPRequest) PostFile(formname, filename string) *RungoHTTPRequest {
 	b.files[formname] = filename
 	return b
 }
@@ -283,7 +283,7 @@ func (b *BeegoHTTPRequest) PostFile(formname, filename string) *BeegoHTTPRequest
 // Body adds request raw body.
 // Supports string and []byte.
 // TODO return error if data is invalid
-func (b *BeegoHTTPRequest) Body(data interface{}) *BeegoHTTPRequest {
+func (b *RungoHTTPRequest) Body(data interface{}) *RungoHTTPRequest {
 	switch t := data.(type) {
 	case string:
 		b.reqBody([]byte(t))
@@ -295,7 +295,7 @@ func (b *BeegoHTTPRequest) Body(data interface{}) *BeegoHTTPRequest {
 	return b
 }
 
-func (b *BeegoHTTPRequest) reqBody(data []byte) *BeegoHTTPRequest {
+func (b *RungoHTTPRequest) reqBody(data []byte) *RungoHTTPRequest {
 	body := io.NopCloser(bytes.NewReader(data))
 	b.req.Body = body
 	b.req.GetBody = func() (io.ReadCloser, error) {
@@ -309,7 +309,7 @@ func (b *BeegoHTTPRequest) reqBody(data []byte) *BeegoHTTPRequest {
 }
 
 // XMLBody adds the request raw body encoded in XML.
-func (b *BeegoHTTPRequest) XMLBody(obj interface{}) (*BeegoHTTPRequest, error) {
+func (b *RungoHTTPRequest) XMLBody(obj interface{}) (*RungoHTTPRequest, error) {
 	if b.req.Body == nil && obj != nil {
 		byts, err := xml.Marshal(obj)
 		if err != nil {
@@ -322,7 +322,7 @@ func (b *BeegoHTTPRequest) XMLBody(obj interface{}) (*BeegoHTTPRequest, error) {
 }
 
 // YAMLBody adds the request raw body encoded in YAML.
-func (b *BeegoHTTPRequest) YAMLBody(obj interface{}) (*BeegoHTTPRequest, error) {
+func (b *RungoHTTPRequest) YAMLBody(obj interface{}) (*RungoHTTPRequest, error) {
 	if b.req.Body == nil && obj != nil {
 		byts, err := yaml.Marshal(obj)
 		if err != nil {
@@ -335,7 +335,7 @@ func (b *BeegoHTTPRequest) YAMLBody(obj interface{}) (*BeegoHTTPRequest, error) 
 }
 
 // JSONBody adds the request raw body encoded in JSON.
-func (b *BeegoHTTPRequest) JSONBody(obj interface{}) (*BeegoHTTPRequest, error) {
+func (b *RungoHTTPRequest) JSONBody(obj interface{}) (*RungoHTTPRequest, error) {
 	if b.req.Body == nil && obj != nil {
 		byts, err := b.JSONMarshal(obj)
 		if err != nil {
@@ -347,7 +347,7 @@ func (b *BeegoHTTPRequest) JSONBody(obj interface{}) (*BeegoHTTPRequest, error) 
 	return b, nil
 }
 
-func (b *BeegoHTTPRequest) JSONMarshal(obj interface{}) ([]byte, error) {
+func (b *RungoHTTPRequest) JSONMarshal(obj interface{}) ([]byte, error) {
 	bf := bytes.NewBuffer([]byte{})
 	jsonEncoder := json.NewEncoder(bf)
 	jsonEncoder.SetEscapeHTML(b.setting.EscapeHTML)
@@ -358,7 +358,7 @@ func (b *BeegoHTTPRequest) JSONMarshal(obj interface{}) ([]byte, error) {
 	return bf.Bytes(), nil
 }
 
-func (b *BeegoHTTPRequest) buildURL(paramBody string) {
+func (b *RungoHTTPRequest) buildURL(paramBody string) {
 	// build GET url with query string
 	if b.req.Method == "GET" && len(paramBody) > 0 {
 		if strings.Contains(b.url, "?") {
@@ -385,7 +385,7 @@ func (b *BeegoHTTPRequest) buildURL(paramBody string) {
 	}
 }
 
-func (b *BeegoHTTPRequest) handleFiles() {
+func (b *RungoHTTPRequest) handleFiles() {
 	pr, pw := io.Pipe()
 	bodyWriter := multipart.NewWriter(pw)
 	go func() {
@@ -405,7 +405,7 @@ func (b *BeegoHTTPRequest) handleFiles() {
 	b.Header("Transfer-Encoding", "chunked")
 }
 
-func (*BeegoHTTPRequest) handleFileToBody(bodyWriter *multipart.Writer, formname string, filename string) {
+func (*RungoHTTPRequest) handleFileToBody(bodyWriter *multipart.Writer, formname string, filename string) {
 	fileWriter, err := bodyWriter.CreateFormFile(formname, filename)
 	const errFmt = "Httplib: %+v"
 	if err != nil {
@@ -427,7 +427,7 @@ func (*BeegoHTTPRequest) handleFileToBody(bodyWriter *multipart.Writer, formname
 	}
 }
 
-func (b *BeegoHTTPRequest) getResponse() (*http.Response, error) {
+func (b *RungoHTTPRequest) getResponse() (*http.Response, error) {
 	if b.resp.StatusCode != 0 {
 		return b.resp, nil
 	}
@@ -440,7 +440,7 @@ func (b *BeegoHTTPRequest) getResponse() (*http.Response, error) {
 }
 
 // DoRequest executes client.Do
-func (b *BeegoHTTPRequest) DoRequest() (resp *http.Response, err error) {
+func (b *RungoHTTPRequest) DoRequest() (resp *http.Response, err error) {
 	root := doRequestFilter
 	if len(b.setting.FilterChains) > 0 {
 		for i := len(b.setting.FilterChains) - 1; i >= 0; i-- {
@@ -450,8 +450,8 @@ func (b *BeegoHTTPRequest) DoRequest() (resp *http.Response, err error) {
 	return root(b.req.Context(), b)
 }
 
-// Deprecated: please use NewBeegoRequestWithContext
-func (b *BeegoHTTPRequest) DoRequestWithCtx(ctx context.Context) (resp *http.Response, err error) {
+// Deprecated: please use NewrungoRequestWithContext
+func (b *RungoHTTPRequest) DoRequestWithCtx(ctx context.Context) (resp *http.Response, err error) {
 	root := doRequestFilter
 	if len(b.setting.FilterChains) > 0 {
 		for i := len(b.setting.FilterChains) - 1; i >= 0; i-- {
@@ -461,7 +461,7 @@ func (b *BeegoHTTPRequest) DoRequestWithCtx(ctx context.Context) (resp *http.Res
 	return root(ctx, b)
 }
 
-func (b *BeegoHTTPRequest) doRequest(_ context.Context) (*http.Response, error) {
+func (b *RungoHTTPRequest) doRequest(_ context.Context) (*http.Response, error) {
 	paramBody := b.buildParamBody()
 
 	b.buildURL(paramBody)
@@ -492,7 +492,7 @@ func (b *BeegoHTTPRequest) doRequest(_ context.Context) (*http.Response, error) 
 	return b.sendRequest(client)
 }
 
-func (b *BeegoHTTPRequest) sendRequest(client *http.Client) (resp *http.Response, err error) {
+func (b *RungoHTTPRequest) sendRequest(client *http.Client) (resp *http.Response, err error) {
 	// retries default value is 0, it will run once.
 	// retries equal to -1, it will run forever until success
 	// retries is set, it will retry fixed times.
@@ -508,7 +508,7 @@ func (b *BeegoHTTPRequest) sendRequest(client *http.Client) (resp *http.Response
 	return nil, berror.Wrap(err, SendRequestFailed, "sending request fail")
 }
 
-func (b *BeegoHTTPRequest) buildCookieJar() http.CookieJar {
+func (b *RungoHTTPRequest) buildCookieJar() http.CookieJar {
 	var jar http.CookieJar
 	if b.setting.EnableCookie {
 		if defaultCookieJar == nil {
@@ -519,7 +519,7 @@ func (b *BeegoHTTPRequest) buildCookieJar() http.CookieJar {
 	return jar
 }
 
-func (b *BeegoHTTPRequest) buildTrans() http.RoundTripper {
+func (b *RungoHTTPRequest) buildTrans() http.RoundTripper {
 	trans := b.setting.Transport
 
 	if trans == nil {
@@ -545,7 +545,7 @@ func (b *BeegoHTTPRequest) buildTrans() http.RoundTripper {
 	return trans
 }
 
-func (b *BeegoHTTPRequest) buildParamBody() string {
+func (b *RungoHTTPRequest) buildParamBody() string {
 	var paramBody string
 	if len(b.params) > 0 {
 		var buf bytes.Buffer
@@ -565,7 +565,7 @@ func (b *BeegoHTTPRequest) buildParamBody() string {
 
 // String returns the body string in response.
 // Calls Response inner.
-func (b *BeegoHTTPRequest) String() (string, error) {
+func (b *RungoHTTPRequest) String() (string, error) {
 	data, err := b.Bytes()
 	if err != nil {
 		return "", err
@@ -576,7 +576,7 @@ func (b *BeegoHTTPRequest) String() (string, error) {
 
 // Bytes returns the body []byte in response.
 // Calls Response inner.
-func (b *BeegoHTTPRequest) Bytes() ([]byte, error) {
+func (b *RungoHTTPRequest) Bytes() ([]byte, error) {
 	if b.body != nil {
 		return b.body, nil
 	}
@@ -602,7 +602,7 @@ func (b *BeegoHTTPRequest) Bytes() ([]byte, error) {
 
 // ToFile saves the body data in response to one file.
 // Calls Response inner.
-func (b *BeegoHTTPRequest) ToFile(filename string) error {
+func (b *RungoHTTPRequest) ToFile(filename string) error {
 	resp, err := b.getResponse()
 	if err != nil {
 		return err
@@ -642,7 +642,7 @@ func pathExistAndMkdir(filename string) (err error) {
 
 // ToJSON returns the map that marshals from the body bytes as json in response.
 // Calls Response inner.
-func (b *BeegoHTTPRequest) ToJSON(v interface{}) error {
+func (b *RungoHTTPRequest) ToJSON(v interface{}) error {
 	data, err := b.Bytes()
 	if err != nil {
 		return err
@@ -653,7 +653,7 @@ func (b *BeegoHTTPRequest) ToJSON(v interface{}) error {
 
 // ToXML returns the map that marshals from the body bytes as xml in response .
 // Calls Response inner.
-func (b *BeegoHTTPRequest) ToXML(v interface{}) error {
+func (b *RungoHTTPRequest) ToXML(v interface{}) error {
 	data, err := b.Bytes()
 	if err != nil {
 		return err
@@ -664,7 +664,7 @@ func (b *BeegoHTTPRequest) ToXML(v interface{}) error {
 
 // ToYAML returns the map that marshals from the body bytes as yaml in response .
 // Calls Response inner.
-func (b *BeegoHTTPRequest) ToYAML(v interface{}) error {
+func (b *RungoHTTPRequest) ToYAML(v interface{}) error {
 	data, err := b.Bytes()
 	if err != nil {
 		return err
@@ -677,7 +677,7 @@ func (b *BeegoHTTPRequest) ToYAML(v interface{}) error {
 // Calls Response inner.
 // If response header contain Content-Type, func will call ToJSON\ToXML\ToYAML.
 // Else it will try to parse body as json\yaml\xml, If all attempts fail, an error will be returned
-func (b *BeegoHTTPRequest) ToValue(value interface{}) error {
+func (b *RungoHTTPRequest) ToValue(value interface{}) error {
 	if value == nil {
 		return nil
 	}
@@ -708,7 +708,7 @@ func (b *BeegoHTTPRequest) ToValue(value interface{}) error {
 }
 
 // Response executes request client gets response manually.
-func (b *BeegoHTTPRequest) Response() (*http.Response, error) {
+func (b *RungoHTTPRequest) Response() (*http.Response, error) {
 	return b.getResponse()
 }
 

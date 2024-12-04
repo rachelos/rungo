@@ -1,4 +1,4 @@
-// Copyright 2014 beego Author. All Rights Reserved.
+// Copyright 2014 rungo Author. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -575,7 +575,7 @@ func (d *dbBase) InsertOrUpdateSQL(names []string, values *[]interface{}, mi *mo
 		}
 		args0 = strings.ToLower(args[0])
 	default:
-		return "", fmt.Errorf("`%s` nonsupport InsertOrUpdate in beego", a.DriverName)
+		return "", fmt.Errorf("`%s` nonsupport InsertOrUpdate in rungo", a.DriverName)
 	}
 
 	argsMap := map[string]string{}

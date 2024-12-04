@@ -1,4 +1,4 @@
-// Copyright 2014 beego Author. All Rights Reserved.
+// Copyright 2014 rungo Author. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -144,7 +144,7 @@ func TestParseForm(t *testing.T) {
 		"Intro":        []string{"I am an engineer!"},
 		"strbool":      []string{"yes"},
 		"date":         []string{"2014-11-12"},
-		"organization": []string{"beego"},
+		"organization": []string{"rungo"},
 		"title":        []string{"CXO"},
 		"hobby":        []string{"", "Basketball", "Football"},
 		"memo":         []string{"nothing"},
@@ -180,8 +180,8 @@ func TestParseForm(t *testing.T) {
 	if y != 2014 || m.String() != "November" || d != 12 {
 		t.Errorf("Date should equal `2014-11-12`, but got `%v`", u.Date.String())
 	}
-	if u.Organization != "beego" {
-		t.Errorf("Organization should equal `beego`, but got `%v`", u.Organization)
+	if u.Organization != "rungo" {
+		t.Errorf("Organization should equal `rungo`, but got `%v`", u.Organization)
 	}
 	if u.Title != "CXO" {
 		t.Errorf("Title should equal `CXO`, but got `%v`", u.Title)

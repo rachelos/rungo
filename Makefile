@@ -35,14 +35,14 @@ help: ## Display this help.
 test-orm-mysql5: ## Run ORM unit tests on mysql5.
 	docker-compose -f scripts/orm_docker_compose.yaml up -d
 	export ORM_DRIVER=mysql
-	export ORM_SOURCE="beego:test@tcp(localhost:13306)/orm_test?charset=utf8"
+	export ORM_SOURCE="rungo:test@tcp(localhost:13306)/orm_test?charset=utf8"
 	go test -v github.com/rachelos/rungo/client/orm
 	docker-compose -f scripts/orm_docker_compose.yaml down
 
 test-orm-mysql8: ## Run ORM unit tests on mysql8.
 	docker-compose -f scripts/orm_docker_compose.yaml up -d
 	export ORM_DRIVER=mysql
-	export ORM_SOURCE="beego:test@tcp(localhost:23306)/orm_test?charset=utf8"
+	export ORM_SOURCE="rungo:test@tcp(localhost:23306)/orm_test?charset=utf8"
 	go test -v github.com/rachelos/rungo/client/orm
 	docker-compose -f scripts/orm_docker_compose.yaml down
 
@@ -65,4 +65,4 @@ test-orm-all: test-orm-mysql5 test-orm-mysql8 test-orm-pgsql test-orm-tidb
 
 .PHONY: fmt
 fmt:
-	goimports -local "github.com/beego/beego" -w .
+	goimports -local "github.com/rungo/rungo" -w .

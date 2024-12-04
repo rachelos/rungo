@@ -1,4 +1,4 @@
-// Copyright 2014 beego Author. All Rights Reserved.
+// Copyright 2014 rungo Author. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -298,7 +298,7 @@ func FileGetContents(filename string) ([]byte, error) {
 	if err != nil {
 		return nil, berror.Wrapf(err, ReadFileCacheContentFailed,
 			"could not read the data from the file: %s, "+
-				"please confirm that file exist and Beego has the permission to read the content.", filename)
+				"please confirm that file exist and rungo has the permission to read the content.", filename)
 	}
 	return data, nil
 }

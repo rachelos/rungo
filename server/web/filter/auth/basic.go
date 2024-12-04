@@ -1,4 +1,4 @@
-// Copyright 2014 beego Author. All Rights Reserved.
+// Copyright 2014 rungo Author. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -22,17 +22,17 @@
 //
 //	func main(){
 //		// authenticate every request
-//		beego.InsertFilter("*", beego.BeforeRouter,auth.Basic("username","secretpassword"))
-//		beego.Run()
+//		rungo.InsertFilter("*", rungo.BeforeRouter,auth.Basic("username","secretpassword"))
+//		rungo.Run()
 //	}
 //
 // Advanced Usage:
 //
 //	func SecretAuth(username, password string) bool {
-//		return username == "astaxie" && password == "helloBeego"
+//		return username == "astaxie" && password == "hellorungo"
 //	}
 //	authPlugin := auth.NewBasicAuthenticator(SecretAuth, "Authorization Required")
-//	beego.InsertFilter("*", beego.BeforeRouter,authPlugin)
+//	rungo.InsertFilter("*", rungo.BeforeRouter,authPlugin)
 package auth
 
 import (

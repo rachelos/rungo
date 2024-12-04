@@ -1,4 +1,4 @@
-// Copyright 2014 beego Author. All Rights Reserved.
+// Copyright 2014 rungo Author. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -23,8 +23,8 @@
 //
 //	func main(){
 //		// apiauth every request
-//		beego.InsertFilter("*", beego.BeforeRouter,apiauth.APIBasicAuth("appid","appkey"))
-//		beego.Run()
+//		rungo.InsertFilter("*", rungo.BeforeRouter,apiauth.APIBasicAuth("appid","appkey"))
+//		rungo.Run()
 //	}
 //
 // Advanced Usage:
@@ -34,7 +34,7 @@
 //		// maybe store in configure, maybe in database
 //	}
 //
-//	beego.InsertFilter("*", beego.BeforeRouter,apiauth.APISecretAuth(getAppSecret, 360))
+//	rungo.InsertFilter("*", rungo.BeforeRouter,apiauth.APISecretAuth(getAppSecret, 360))
 //
 // Information:
 //

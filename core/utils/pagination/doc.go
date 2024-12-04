@@ -4,14 +4,14 @@ context of a http request.
 
 # Usage
 
-In your beego.Controller:
+In your rungo.Controller:
 
 	package controllers
 
 	import "github.com/rachelos/rungo/core/utils/pagination"
 
 	type PostsController struct {
-	  beego.Controller
+	  rungo.Controller
 	}
 
 	func (this *PostsController) ListAllPosts() {

@@ -1,4 +1,4 @@
-// Copyright 2021 beego
+// Copyright 2021 rungo
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ import (
 )
 
 func TestFilterChainBuilderFilterChain(t *testing.T) {
-	next := func(ctx context.Context, req *httplib.BeegoHTTPRequest) (*http.Response, error) {
+	next := func(ctx context.Context, req *httplib.RungoHTTPRequest) (*http.Response, error) {
 		time.Sleep(100 * time.Millisecond)
 		return &http.Response{
 			StatusCode: 404,
@@ -36,7 +36,7 @@ func TestFilterChainBuilderFilterChain(t *testing.T) {
 	}
 	builder := NewOpenTelemetryFilter(true, nil)
 	filter := builder.FilterChain(next)
-	req := httplib.Get("https://github.com/notifications?query=repo%3Aastaxie%2Fbeego")
+	req := httplib.Get("https://github.com/notifications?query=repo%3Aastaxie%2Frungo")
 	resp, err := filter(context.Background(), req)
 
 	defer resp.Body.Close()

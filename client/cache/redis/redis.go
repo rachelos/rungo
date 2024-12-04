@@ -1,4 +1,4 @@
-// Copyright 2014 beego Author. All Rights Reserved.
+// Copyright 2014 rungo Author. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -64,7 +64,7 @@ type Cache struct {
 
 	// skipEmptyPrefix for backward compatible,
 	// check function associate
-	// see https://github.com/beego/beego/issues/5248
+	// see https://github.com/rungo/rungo/issues/5248
 	skipEmptyPrefix bool
 
 	// Timeout value (less than the redis server's timeout value).

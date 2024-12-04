@@ -1,4 +1,4 @@
-// Copyright 2020 beego
+// Copyright 2020 rungo
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -693,7 +693,7 @@ func TestDbBase_InsertOrUpdateSQL(t *testing.T) {
 				"`score`=`score`+1",
 			},
 
-			wantErr: errors.New("`sqlite3` nonsupport InsertOrUpdate in beego"),
+			wantErr: errors.New("`sqlite3` nonsupport InsertOrUpdate in rungo"),
 			wantValues: []interface{}{
 				"test_name",
 				18,

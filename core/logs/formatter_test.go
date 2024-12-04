@@ -85,23 +85,23 @@ func TestPatternLogFormatter(t *testing.T) {
 		{
 			msg: &LogMsg{
 				Msg:        "hello %s",
-				FilePath:   "/User/go/beego/main.go",
+				FilePath:   "/User/go/rungo/main.go",
 				Level:      LevelWarn,
 				LineNumber: 10,
 				When:       when,
 				Args:       []interface{}{"world"},
 			},
-			want: "/User/go/beego/main.go:10|2022-04-17[W]>> hello world",
+			want: "/User/go/rungo/main.go:10|2022-04-17[W]>> hello world",
 		},
 		{
 			msg: &LogMsg{
 				Msg:        "hello",
-				FilePath:   "/User/go/beego/main.go",
+				FilePath:   "/User/go/rungo/main.go",
 				Level:      LevelWarn,
 				LineNumber: 10,
 				When:       when,
 			},
-			want: "/User/go/beego/main.go:10|2022-04-17[W]>> hello",
+			want: "/User/go/rungo/main.go:10|2022-04-17[W]>> hello",
 		},
 		{
 			msg:  &LogMsg{},

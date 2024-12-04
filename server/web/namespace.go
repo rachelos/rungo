@@ -1,4 +1,4 @@
-// Copyright 2014 beego Author. All Rights Reserved.
+// Copyright 2014 rungo Author. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -49,7 +49,7 @@ func NewNamespace(prefix string, params ...LinkNamespace) *Namespace {
 // usage:
 //
 //	ns.Cond(func (ctx *context.Context) bool{
-//	      if ctx.Input.Domain() == "api.beego.vip" {
+//	      if ctx.Input.Domain() == "api.rungo.vip" {
 //	        return true
 //	      }
 //	      return false
@@ -99,84 +99,84 @@ func (n *Namespace) Filter(action string, filter ...FilterFunc) *Namespace {
 	return n
 }
 
-// Router same as beego.Rourer
+// Router same as rungo.Rourer
 // refer: https://godoc.org/github.com/rachelos/rungo#Router
 func (n *Namespace) Router(rootpath string, c ControllerInterface, mappingMethods ...string) *Namespace {
 	n.handlers.Add(rootpath, c, WithRouterMethods(c, mappingMethods...))
 	return n
 }
 
-// AutoRouter same as beego.AutoRouter
+// AutoRouter same as rungo.AutoRouter
 // refer: https://godoc.org/github.com/rachelos/rungo#AutoRouter
 func (n *Namespace) AutoRouter(c ControllerInterface) *Namespace {
 	n.handlers.AddAuto(c)
 	return n
 }
 
-// AutoPrefix same as beego.AutoPrefix
+// AutoPrefix same as rungo.AutoPrefix
 // refer: https://godoc.org/github.com/rachelos/rungo#AutoPrefix
 func (n *Namespace) AutoPrefix(prefix string, c ControllerInterface) *Namespace {
 	n.handlers.AddAutoPrefix(prefix, c)
 	return n
 }
 
-// Get same as beego.Get
+// Get same as rungo.Get
 // refer: https://godoc.org/github.com/rachelos/rungo#Get
 func (n *Namespace) Get(rootpath string, f HandleFunc) *Namespace {
 	n.handlers.Get(rootpath, f)
 	return n
 }
 
-// Post same as beego.Post
+// Post same as rungo.Post
 // refer: https://godoc.org/github.com/rachelos/rungo#Post
 func (n *Namespace) Post(rootpath string, f HandleFunc) *Namespace {
 	n.handlers.Post(rootpath, f)
 	return n
 }
 
-// Delete same as beego.Delete
+// Delete same as rungo.Delete
 // refer: https://godoc.org/github.com/rachelos/rungo#Delete
 func (n *Namespace) Delete(rootpath string, f HandleFunc) *Namespace {
 	n.handlers.Delete(rootpath, f)
 	return n
 }
 
-// Put same as beego.Put
+// Put same as rungo.Put
 // refer: https://godoc.org/github.com/rachelos/rungo#Put
 func (n *Namespace) Put(rootpath string, f HandleFunc) *Namespace {
 	n.handlers.Put(rootpath, f)
 	return n
 }
 
-// Head same as beego.Head
+// Head same as rungo.Head
 // refer: https://godoc.org/github.com/rachelos/rungo#Head
 func (n *Namespace) Head(rootpath string, f HandleFunc) *Namespace {
 	n.handlers.Head(rootpath, f)
 	return n
 }
 
-// Options same as beego.Options
+// Options same as rungo.Options
 // refer: https://godoc.org/github.com/rachelos/rungo#Options
 func (n *Namespace) Options(rootpath string, f HandleFunc) *Namespace {
 	n.handlers.Options(rootpath, f)
 	return n
 }
 
-// Patch same as beego.Patch
+// Patch same as rungo.Patch
 // refer: https://godoc.org/github.com/rachelos/rungo#Patch
 func (n *Namespace) Patch(rootpath string, f HandleFunc) *Namespace {
 	n.handlers.Patch(rootpath, f)
 	return n
 }
 
-// Any same as beego.Any
+// Any same as rungo.Any
 // refer: https://godoc.org/github.com/rachelos/rungo#Any
 func (n *Namespace) Any(rootpath string, f HandleFunc) *Namespace {
 	n.handlers.Any(rootpath, f)
 	return n
 }
 
-// Handler same as beego.Handler
+// Handler same as rungo.Handler
 // refer: https://godoc.org/github.com/rachelos/rungo#Handler
 func (n *Namespace) Handler(rootpath string, h http.Handler) *Namespace {
 	n.handlers.Handler(rootpath, h)
@@ -190,49 +190,49 @@ func (n *Namespace) Include(cList ...ControllerInterface) *Namespace {
 	return n
 }
 
-// CtrlGet same as beego.CtrlGet
+// CtrlGet same as rungo.CtrlGet
 func (n *Namespace) CtrlGet(rootpath string, f interface{}) *Namespace {
 	n.handlers.CtrlGet(rootpath, f)
 	return n
 }
 
-// CtrlPost same as beego.CtrlPost
+// CtrlPost same as rungo.CtrlPost
 func (n *Namespace) CtrlPost(rootpath string, f interface{}) *Namespace {
 	n.handlers.CtrlPost(rootpath, f)
 	return n
 }
 
-// CtrlDelete same as beego.CtrlDelete
+// CtrlDelete same as rungo.CtrlDelete
 func (n *Namespace) CtrlDelete(rootpath string, f interface{}) *Namespace {
 	n.handlers.CtrlDelete(rootpath, f)
 	return n
 }
 
-// CtrlPut same as beego.CtrlPut
+// CtrlPut same as rungo.CtrlPut
 func (n *Namespace) CtrlPut(rootpath string, f interface{}) *Namespace {
 	n.handlers.CtrlPut(rootpath, f)
 	return n
 }
 
-// CtrlHead same as beego.CtrlHead
+// CtrlHead same as rungo.CtrlHead
 func (n *Namespace) CtrlHead(rootpath string, f interface{}) *Namespace {
 	n.handlers.CtrlHead(rootpath, f)
 	return n
 }
 
-// CtrlOptions same as beego.CtrlOptions
+// CtrlOptions same as rungo.CtrlOptions
 func (n *Namespace) CtrlOptions(rootpath string, f interface{}) *Namespace {
 	n.handlers.CtrlOptions(rootpath, f)
 	return n
 }
 
-// CtrlPatch same as beego.CtrlPatch
+// CtrlPatch same as rungo.CtrlPatch
 func (n *Namespace) CtrlPatch(rootpath string, f interface{}) *Namespace {
 	n.handlers.CtrlPatch(rootpath, f)
 	return n
 }
 
-// Any same as beego.CtrlAny
+// Any same as rungo.CtrlAny
 func (n *Namespace) CtrlAny(rootpath string, f interface{}) *Namespace {
 	n.handlers.CtrlAny(rootpath, f)
 	return n
@@ -240,18 +240,18 @@ func (n *Namespace) CtrlAny(rootpath string, f interface{}) *Namespace {
 
 // Namespace add nest Namespace
 // usage:
-// ns := beego.NewNamespace(“/v1”).
+// ns := rungo.NewNamespace(“/v1”).
 // Namespace(
 //
-//	beego.NewNamespace("/shop").
+//	rungo.NewNamespace("/shop").
 //	    Get("/:id", func(ctx *context.Context) {
 //	        ctx.Output.Body([]byte("shopinfo"))
 //	}),
-//	beego.NewNamespace("/order").
+//	rungo.NewNamespace("/order").
 //	    Get("/:id", func(ctx *context.Context) {
 //	        ctx.Output.Body([]byte("orderinfo"))
 //	}),
-//	beego.NewNamespace("/crm").
+//	rungo.NewNamespace("/crm").
 //	    Get("/:id", func(ctx *context.Context) {
 //	        ctx.Output.Body([]byte("crminfo"))
 //	}),
@@ -284,7 +284,7 @@ func (n *Namespace) Namespace(ns ...*Namespace) *Namespace {
 	return n
 }
 
-// AddNamespace register Namespace into beego.Handler
+// AddNamespace register Namespace into rungo.Handler
 // support multi Namespace
 func AddNamespace(nl ...*Namespace) {
 	for _, n := range nl {

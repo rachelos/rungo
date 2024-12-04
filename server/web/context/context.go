@@ -1,4 +1,4 @@
-// Copyright 2014 beego Author. All Rights Reserved.
+// Copyright 2014 rungo Author. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -67,11 +67,11 @@ func NewContext() *Context {
 	}
 }
 
-// Context Http request context struct including BeegoInput, BeegoOutput, http.Request and http.ResponseWriter.
-// BeegoInput and BeegoOutput provides an api to operate request and response more easily.
+// Context Http request context struct including RungoInput, rungoOutput, http.Request and http.ResponseWriter.
+// RungoInput and rungoOutput provides an api to operate request and response more easily.
 type Context struct {
-	Input          *BeegoInput
-	Output         *BeegoOutput
+	Input          *RungoInput
+	Output         *rungoOutput
 	Request        *http.Request
 	ResponseWriter *Response
 	_xsrfToken     string
@@ -179,7 +179,7 @@ func isStructPtr(t reflect.Type) bool {
 	return t.Kind() == reflect.Ptr && t.Elem().Kind() == reflect.Struct
 }
 
-// Reset initializes Context, BeegoInput and BeegoOutput
+// Reset initializes Context, RungoInput and rungoOutput
 func (ctx *Context) Reset(rw http.ResponseWriter, r *http.Request) {
 	ctx.Request = r
 	if ctx.ResponseWriter == nil {
@@ -197,7 +197,7 @@ func (ctx *Context) Redirect(status int, localurl string) {
 }
 
 // Abort stops the request.
-// If beego.ErrorMaps exists, panic body.
+// If rungo.ErrorMaps exists, panic body.
 func (ctx *Context) Abort(status int, body string) {
 	ctx.Output.SetStatus(status)
 	panic(body)
@@ -209,13 +209,13 @@ func (ctx *Context) WriteString(content string) {
 }
 
 // GetCookie gets a cookie from a request for a given key.
-// (Alias of BeegoInput.Cookie)
+// (Alias of RungoInput.Cookie)
 func (ctx *Context) GetCookie(key string) string {
 	return ctx.Input.Cookie(key)
 }
 
 // SetCookie sets a cookie for a response.
-// (Alias of BeegoOutput.Cookie)
+// (Alias of rungoOutput.Cookie)
 func (ctx *Context) SetCookie(name string, value string, others ...interface{}) {
 	ctx.Output.Cookie(name, value, others...)
 }

@@ -1,4 +1,4 @@
-// Copyright 2014 beego Author. All Rights Reserved.
+// Copyright 2014 rungo Author. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -213,12 +213,12 @@ func (ini *IniConfig) parseData(dir string, data []byte) (*IniConfigContainer, e
 
 // ParseData parse ini the data
 // When include other.conf,other.conf is either absolute directory
-// or under beego in default temporary directory(/tmp/beego[-username]).
+// or under rungo in default temporary directory(/tmp/rungo[-username]).
 func (ini *IniConfig) ParseData(data []byte) (Configer, error) {
-	dir := "beego"
+	dir := "rungo"
 	currentUser, err := user.Current()
 	if err == nil {
-		dir = "beego-" + currentUser.Username
+		dir = "rungo-" + currentUser.Username
 	}
 	dir = filepath.Join(os.TempDir(), dir)
 	if err = os.MkdirAll(dir, os.ModePerm); err != nil {

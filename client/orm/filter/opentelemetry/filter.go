@@ -1,4 +1,4 @@
-// Copyright 2020 beego
+// Copyright 2020 rungo
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -58,7 +58,7 @@ func (builder *FilterChainBuilder) FilterChain(next orm.Filter) orm.Filter {
 		if strings.HasPrefix(inv.Method, "Begin") || inv.Method == "Commit" || inv.Method == "Rollback" {
 			return next(ctx, inv)
 		}
-		spanCtx, span := otel.Tracer("beego_orm").Start(ctx, invOperationName(ctx, inv))
+		spanCtx, span := otel.Tracer("rungo_orm").Start(ctx, invOperationName(ctx, inv))
 		defer span.End()
 
 		res := next(spanCtx, inv)
@@ -75,7 +75,7 @@ func (builder *FilterChainBuilder) buildSpan(ctx context.Context, span otelTrace
 	v, _ := ctx.Value(orm.TxNameKey).(string)
 	span.SetAttributes(attribute.String("orm.txName", v))
 	span.SetAttributes(attribute.String("span.kind", "client"))
-	span.SetAttributes(attribute.String("component", "beego"))
+	span.SetAttributes(attribute.String("component", "rungo"))
 
 	if builder.customSpanFunc != nil {
 		builder.customSpanFunc(ctx, span, inv)

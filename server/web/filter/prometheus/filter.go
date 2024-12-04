@@ -1,4 +1,4 @@
-// Copyright 2020 beego
+// Copyright 2020 rungo
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -22,7 +22,7 @@ import (
 
 	"github.com/prometheus/client_golang/prometheus"
 
-	beego "github.com/rachelos/rungo"
+	rungo "github.com/rachelos/rungo"
 	"github.com/rachelos/rungo/core/logs"
 	"github.com/rachelos/rungo/server/web"
 	"github.com/rachelos/rungo/server/web/context"
@@ -61,7 +61,7 @@ func (builder *FilterChainBuilder) FilterChain(next web.FilterFunc) web.FilterFu
 
 func (builder *FilterChainBuilder) buildVec() *prometheus.SummaryVec {
 	summaryVec := prometheus.NewSummaryVec(prometheus.SummaryOpts{
-		Name:      "beego",
+		Name:      "rungo",
 		Subsystem: "http_request",
 		ConstLabels: map[string]string{
 			"server":  web.BConfig.ServerName,
@@ -75,18 +75,18 @@ func (builder *FilterChainBuilder) buildVec() *prometheus.SummaryVec {
 
 func registerBuildInfo() {
 	buildInfo := prometheus.NewGaugeVec(prometheus.GaugeOpts{
-		Name:      "beego",
+		Name:      "rungo",
 		Subsystem: "build_info",
 		Help:      "The building information",
 		ConstLabels: map[string]string{
 			"appname":        web.BConfig.AppName,
-			"build_version":  beego.BuildVersion,
-			"build_revision": beego.BuildGitRevision,
-			"build_status":   beego.BuildStatus,
-			"build_tag":      beego.BuildTag,
-			"build_time":     strings.Replace(beego.BuildTime, "--", " ", 1),
-			"go_version":     beego.GoVersion,
-			"git_branch":     beego.GitBranch,
+			"build_version":  rungo.BuildVersion,
+			"build_revision": rungo.BuildGitRevision,
+			"build_status":   rungo.BuildStatus,
+			"build_tag":      rungo.BuildTag,
+			"build_time":     strings.Replace(rungo.BuildTime, "--", " ", 1),
+			"go_version":     rungo.GoVersion,
+			"git_branch":     rungo.GitBranch,
 			"start_time":     time.Now().Format("2006-01-02 15:04:05"),
 		},
 	}, []string{})

@@ -1,4 +1,4 @@
-// Copyright 2014 beego Author. All Rights Reserved.
+// Copyright 2014 rungo Author. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -26,14 +26,14 @@
 //		// - PUT and PATCH methods
 //		// - Origin header
 //		// - Credentials share
-//		beego.InsertFilter("*", beego.BeforeRouter, cors.Allow(&cors.Options{
+//		rungo.InsertFilter("*", rungo.BeforeRouter, cors.Allow(&cors.Options{
 //			AllowOrigins:     []string{"https://*.foo.com"},
 //			AllowMethods:     []string{"PUT", "PATCH"},
 //			AllowHeaders:     []string{"Origin"},
 //			ExposeHeaders:    []string{"Content-Length"},
 //			AllowCredentials: true,
 //		}))
-//		beego.Run()
+//		rungo.Run()
 //	}
 package cors
 
